@@ -1,0 +1,174 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+.main-header {
+    display: block;
+    /* img 태그 + srcset 혹은 img-srcset으로 변경 필요  */
+    background-image: url("./imgs/main-back.png");
+    background-repeat: no-repeat;
+    object-fit: contain;
+    width: 1920px;
+    height: 800px;
+    padding: 0;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+.main-header-overlay {
+    width: 1920px;
+    height: 800px;
+    padding: 0;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #404040;
+    mix-blend-mode: overlay;
+}
+
+.main-header-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 56px;
+    margin-bottom: 230px;
+}
+.main-header-logo {
+    display: block;
+    /* img 태그 + srcset 혹은 img-srcset으로 변경 필요  */
+    background-image: url("./imgs/main-header-logo.png");
+    object-fit: contain;
+    width: 64px;
+    height: 64px;
+    margin-left: 360px;
+}
+.main-header-logo:hover, .main-header-setting:hover {
+    cursor: pointer;
+}
+.main-header-setting {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    /* img 태그 + srcset 혹은 img-srcset으로 변경 필요  */
+    background-image: url("./imgs/setting-icon.png");
+    margin-left: 1120px;
+}
+
+.main-header-date {
+    display: flex;
+    flex-direction: row;
+    margin-left: 362px;
+    margin-bottom: 95px;
+}
+.main-header-day {
+    width: 65px;
+    height: 50px !important;
+    opacity: 0.8;
+    font-family: NanumBarunGothic;
+    font-size: 64px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: left;
+    color: rgba(250, 250, 250, 0.8);
+}
+.main-header-mm-yy {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+}
+.main-header-month {
+    flex: 1;
+    text-align: right;
+    vertical-align: top;
+    width: 39px;
+    height: 15px;
+    opacity: 0.8;
+    font-family: NanumBarunGothic;
+    font-size: 20px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: left;
+    color: rgba(250, 250, 250, 0.8);
+}
+.main-header-year {
+    flex: 1;
+    text-align: right;
+    vertical-align: bottom;
+    width: 45px;
+    height: 15px;
+    opacity: 0.8;
+    font-family: NanumBarunGothic;
+    font-size: 20px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: left;
+    color: rgba(250, 250, 250, 0.8);
+}
+.main-header-greeting {
+    height: 47px;
+    opacity: 0.8;
+    font-family: NanumMyeongjo;
+    font-size: 48px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 0.58;
+    letter-spacing: normal;
+    text-align: left;
+    color: rgba(250, 250, 250, 0.8);
+    margin-bottom: 20px;
+    margin-left: 362px;
+}
+
+.main-header-mom {
+    height: 47px;
+    opacity: 0.8;
+    font-family: NanumMyeongjo;
+    font-size: 48px;
+    font-weight: 800;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 0.58;
+    letter-spacing: normal;
+    text-align: left;
+    color: rgba(250, 250, 250, 0.8);
+    margin-left: 362px;
+    margin-bottom: 80px;
+}
+
+.main-header-go {
+    margin-left: 362px;
+    height: 15px;
+    opacity: 0.8;
+    font-family: NanumBarunGothic;
+    font-size: 16px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.75;
+    letter-spacing: normal;
+    text-align: left;
+    color: rgba(250, 250, 250, 0.8);
+}
+.main-header-arrow {
+    margin-left:11px;
+}
+.main-body {
+    display: block;
+    width: 1920px;
+    height: 900px;
+    padding: 0;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
