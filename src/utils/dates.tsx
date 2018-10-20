@@ -1,10 +1,17 @@
 export default class DateUtil {
     private date : Date;
-    constructor () {
-        this.date = new Date();
+    constructor (arg?: DateUtil) {
+        if (arg) {
+            this.date = new Date(arg.getTime());
+        } else {
+            this.date = new Date();
+        }
     }
-    public yesterday() {
-        this.date.setDate(this.date.getDate() - 1);
+    public travelDay(days: number) {
+        this.date.setDate(this.date.getDate() + days);
+    }
+    public travelMonth(months: number) {
+        this.date.setMonth(this.date.getMonth() + months);
     }
     public toString() : string {
         return this.date.toLocaleDateString(undefined, {
@@ -29,5 +36,8 @@ export default class DateUtil {
         return this.date.toLocaleDateString(undefined, {
             month: 'long',
         });
+    }
+    public getTime() : number {
+        return this.date.getTime();
     }
 }

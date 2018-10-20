@@ -1,6 +1,28 @@
+/* 
+    과거 8일간의 기록을 보여주는 컴포넌트 
+*/
 import * as React from 'react';
 import DateUtil from '../../utils/dates';
+import arrow from "./imgs/noun-arrow-941551.png";
 
+// 레포트 페이지로 이동 
+
+function GotoReport () {
+    return (
+        <div className="goto-report">
+            <div className="goto-text">
+                잘, 채워지고 있나요?
+            </div>
+            <div className="goto-text">
+                이번주는 어땠어요? 
+            </div>
+            <div className="goto-report-text">
+                자세히 보기
+                <img className="main-header-arrow" src={arrow} />
+            </div>
+        </div>
+    )
+}
 // 상대 날짜 표기 박스
 interface ISquareProps {
     day: number;
@@ -54,11 +76,14 @@ export default function RelativeDays () {
                 relativeDay={relativeString[i]}
                 />
         ));
-        today.yesterday();
+        today.travelDay(-1);
     }
     return (
-        <div className="relative-days">
-            {dailySquares}
+        <div className="report-section">
+            <div className="relative-days">
+                {dailySquares}
+            </div>
+            <GotoReport />
         </div>
     )
 }
