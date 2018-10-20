@@ -1,14 +1,13 @@
 import * as React from 'react';
-
-class MainBody extends React.Component {
+import RelativeDays from './relative-days';
+// 메인 페이지의 실제 내용 표시부 
+export default class MainBody extends React.Component {
     public render() {
         return (
             <div
             className="main-body">
-                여기가 바디에오
+                <RelativeDays />
             </div>
         );
     }
 }
-
-export default MainBody;
