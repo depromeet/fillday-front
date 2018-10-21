@@ -1,0 +1,32 @@
+.btn-groups {
+    position: relative;
+    float: right;
+    top: 20px;
+}
+
+.btn-groups > .btn {
+    width: 100px;
+    height: 40px;
+    margin-left: 10px;
+    border-radius: 2px;
+    font-family: NanumBarunGothic;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2.57;
+    letter-spacing: -0.4px;
+    text-align: center;
+}
+
+.btn-groups .save-btn {
+    border: solid 1px #961e1e;
+    background-color: #961e1e;
+    color: #ffffff;
+}
+
+.btn-groups .cancle-btn {
+    border: solid 1px #e3e3e3;
+    background-color: #e3e3e3;
+    color: #961e1e;
+}
