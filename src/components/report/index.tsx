@@ -1,14 +1,30 @@
 import * as React from 'react';
-import GraphicPane from './graphic-report';
-import ListPane from './list-report';
-import './graphic-report';
+import GraphicPane from './fillday-report/graphic-report';
+import ListPane from './written-diary';
+import './report.css';
 
-export default class ReportPage extends React.Component {
+interface IReportStatus {
+  date: Date;
+}
+export default class ReportPage extends React.Component<any, IReportStatus> {
+  constructor(props:any) {
+    super(props);
+    this.onDateChange = this.onDateChange.bind(this);
+    this.state = {
+      date: new Date(),
+    }
+  }
+  public onDateChange(date: Date) {
+    this.setState({date});
+  }
   public render() {
     return (
-      <div className="report-page">
-        <GraphicPane />
-        <ListPane />
+      <div className="report-main">
+        <GraphicPane 
+        onDateChange={this.onDateChange}
+        date={this.state.date}/>
+        <ListPane 
+        date={this.state.date}/>
       </div>
     );
   }

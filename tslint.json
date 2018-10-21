@@ -1,7 +1,14 @@
 {
   "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
   "rules" : {
-    "ordered-imports": false
+    "ordered-imports": false,
+    "max-classes-per-file": false,
+    "no-unused-expression": false,
+    "no-unused-variable": false,
+    "no-console": false,
+    "no-string-literal": false,
+    "object-literal-sort-keys": false,
+    "jsx-no-lambda": false
   },
   "linterOptions": {
     "exclude": [
