@@ -1,0 +1,9 @@
+.setting-item {
+    display: table;
+    height: 40px;
+}
+.setting-item-title {
+    display: table-cell;
+    width: 173px;
+    vertical-align: middle;
+}
