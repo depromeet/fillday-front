@@ -41,7 +41,7 @@ export default class LineGraph extends React.Component {
           style={{marginTop: '24px',}}
           width={745} height={200} data={data}>
             <XAxis 
-            padding={{left: 16, right:0}} tickMargin={16} tickLine={false}
+            padding={{left: 16, right:16}} tickMargin={16} tickLine={false}
             dataKey="name" />
             <YAxis 
             padding={{top: 0, bottom:0}} tickMargin={20}
@@ -53,7 +53,9 @@ export default class LineGraph extends React.Component {
             <CartesianGrid 
             vertical={false}
             strokeDasharray="3 3"/>
-            <Line type="monotone" stroke="#555555" dataKey="집중도" 
+            <Line type="monotone" stroke="#d90b3e" dataKey="집중도" 
+            strokeWidth={2}
+            dot={{strokeDasharray:'none'}}
             animationDuration={1500}
             strokeDasharray="5 2"/>
             <Tooltip />

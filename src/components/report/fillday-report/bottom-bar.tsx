@@ -1,10 +1,24 @@
 import * as React from 'react';
 import { Cell, BarChart, XAxis, Tooltip, Bar, YAxis } from 'recharts';
+import { COLOR } from '../../../utils/color';
 
+function YaxisTick(props: any) {
+  const rate = {
+    0: "", 1: "Bad", 2: "", 
+    3: "Soso", 4:"", 5: "Best"};
+  
+  return (
+    <g transform={`translate(${props.x},${props.y})`}>
+      <text x={0} y={0} className="line-ytics">
+        {rate[props.payload.value]}
+      </text>
+    </g>
+  );
+}
 export default class BarGraph extends React.Component {
   public render() {
     const data = [];
-    for(let i = 0 ;i < 24;i++) {
+    for(let i = 1 ;i <= 24;i++) {
         data.push({
             name: i.toLocaleString(undefined, {
                 minimumIntegerDigits: 2
@@ -26,24 +40,26 @@ export default class BarGraph extends React.Component {
                 dataKey="name"
                 tickLine={false}
                 axisLine={false}
+                ticks={["01", "12", "24"]}
                 />
                 <YAxis
+                dataKey="집중도"
                 width={0}
                 domain={[0,5]} 
                 tickLine={false}
                 axisLine={false}
-                tick={false}
+                tick={<YaxisTick />}
                 />
                 <Tooltip />
-                <Bar dataKey="집중도" fill="#000000"
+                <Bar dataKey="집중도" 
                 animationDuration={1500}
                 >
                     {
                         data.map((entry, index) => {
                             return (
                                 <Cell 
-                                opacity={entry["집중도"] * 0.2}
-                                key={index} />
+                                fill={COLOR[Math.floor(entry["집중도"]/2)]}
+                                key={`bar-${index}`} />
                             );
                         })
                     }

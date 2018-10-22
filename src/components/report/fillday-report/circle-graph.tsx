@@ -34,7 +34,7 @@ export default class CircleGraph extends React.Component {
                     {name: 'Not bad', value: 1}, {name: 'Soso', value: 1},
                     {name: 'Good', value: 1}, {name: "Best", value:1}];
                     
-    const COLORS = ['#dee2e6', '#495057'];
+    const COLORS = ['#dee2e6', '#d90b3e'];
 
     const innerCircle = [{name: '등급', value: 3}];
     
@@ -80,7 +80,8 @@ export default class CircleGraph extends React.Component {
                         outerRadius={32}
                         startAngle={270}
                         endAngle={-90}
-                        fill="#dee2e6"
+                        fill="#d90b3e"
+                        opacity={0.5}
                         strokeWidth={0}
                         labelLine={false}
                         label={LevelLabel}
