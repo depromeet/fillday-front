@@ -17,7 +17,7 @@ class SettingNotificationDisable extends React.Component {
                     <div className="setting-item-title">
                         금지시간 설정
                     </div>
-                    {/*  */}
+                    <input type="time"></input>
                 </div>
             </div>
         );

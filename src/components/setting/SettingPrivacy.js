@@ -18,14 +18,14 @@ class SettingPrivacy extends React.Component {
                     <div className="setting-item-title">
                     이메일
                     </div>
-                      <input type="text"></input>
+                      <input type="text" readOnly></input>
                     <SettingButton className="privacy-edit-btn" btnName="수정"/>
                 </div>
                 <div className="setting-item">
                     <div className="setting-item-title">
                     비밀번호
                     </div>
-                    <input type="text"></input>
+                    <input type="password" readOnly></input>
                     <SettingButton className="privacy-edit-btn" btnName="수정"/>
                 </div>
             </div>

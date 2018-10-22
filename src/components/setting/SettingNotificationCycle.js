@@ -19,6 +19,10 @@ class SettingNotificationCycle extends React.Component {
                     </div>
                 <select>
                     <option>2시간 단위로 알려주세요.</option>
+                    <option>4시간 단위로 알려주세요.</option>
+                    <option>6시간 단위로 알려주세요.</option>
+                    <option>8시간 단위로 알려주세요.</option>
+                    <option>12시간 단위로 알려주세요.</option>
                 </select>
                 </div>
                 <div className="setting-item">
