@@ -3,15 +3,19 @@ import PageSubTitle from './PageSubTitle';
 import Toggle from './Toggle';
 
 class SettingNotificationCycle extends React.Component {
+    handleToggle() {
+        console.log('handleToggle')
+    }
     render() {
+        const {isSetting, cycle, dayOfWeek} = this.props.notificationCycle;
         return (
             <div>
                 <PageSubTitle title="알림"/>
                 <div className="setting-item">
                     <div className="setting-item-title">
-                    웹 알림 활성화
+                        웹 알림 활성화
                     </div>
-                <Toggle/>
+                    <Toggle isSetting/>
                 </div>
                 <div className="setting-item">
                     <div className="setting-item-title">

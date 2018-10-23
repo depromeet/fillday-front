@@ -5,11 +5,12 @@ import PageTitle from './PageTitle';
 
 class SettingAccount extends React.Component {
     render() {
+        const {privacy, snsToken} = this.props.account;
         return (
             <React.Fragment>
                 <PageTitle title="계정설정"/>
-                <SettingPrivacy />
-                <SettingConnectSNS />
+                <SettingPrivacy privacy={privacy}/>
+                <SettingConnectSNS snsToken={snsToken}/>
             </React.Fragment>
 
         );
