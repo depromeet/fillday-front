@@ -8,7 +8,7 @@ class SettingAccount extends React.Component {
         const {privacy, snsToken} = this.props.account;
         return (
             <React.Fragment>
-                <PageTitle title="계정설정"/>
+                <PageTitle title="계정설정" settingMode/>
                 <SettingPrivacy privacy={privacy}/>
                 <SettingConnectSNS snsToken={snsToken}/>
             </React.Fragment>

@@ -10,7 +10,7 @@ class SettingNotification extends React.Component {
         const {notificationCycle, notificationDisable} = this.props.notification;
         return (
             <React.Fragment>
-                <PageTitle title="알림 설정"/>
+                <PageTitle title="알림 설정" settingMode/>
                 <SettingNotificationCycle notificationCycle = {notificationCycle} />
                 <SettingNotificationDisable notificationDisable = {notificationDisable}/>
             </React.Fragment>
