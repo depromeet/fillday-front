@@ -10,6 +10,7 @@ const Title = styled.div`
     padding: 25px 1px;
     color: #000000;
     display: inline-block;
+    margin-right: 14px;
     ${props => props.settingMode && `
     border-bottom: 1px solid #d4d4d4
     display: block;
