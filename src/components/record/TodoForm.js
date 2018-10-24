@@ -6,6 +6,10 @@ import styled from 'styled-components';
 
 const TodoFormComponent = styled.div`
     display: flex;
+    padding: 10px 0;
+    &:first-child {
+        margin-top:10px;
+    }
 `
 const CheckBox = ({name}) => (
     <div className="checkbox">

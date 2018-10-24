@@ -8,6 +8,7 @@ const TodoComponent = styled.div`
     display: inline-block;
     width: 270px;
     min-height: 354px;
+    height: fit-content;
     box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.06);
     background-color: #ffffff;
     margin-left: 30px;

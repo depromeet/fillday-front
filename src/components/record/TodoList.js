@@ -16,7 +16,6 @@ class TodoList extends Component {
             todoList: todoList.concat({ id: this.id++, ...this.state.rowData })
 
         })
-        console.log(this.state)
     }
 
     render() {

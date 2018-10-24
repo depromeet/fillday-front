@@ -9,10 +9,10 @@
     background-color: #fff;
     display: inline-block;
     height: 16PX;
-    margin: 4px 0.25em;
+    margin: 4px 1em 0px 0;
     width: 16px;
     border-radius: 2px;
-    border: solid 1px #d90b3e
+    border: solid 1px #d90b3e;
 }
 
 .checkbox input {

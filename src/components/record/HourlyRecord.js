@@ -9,6 +9,7 @@ const HourlyRecordComponent = styled.div`
     display: inline-block;
     width: 900px;
     min-height: 354px;
+    height: fit-content;
     box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.06);
     background-color: #ffffff;
     box-sizing: border-box;
