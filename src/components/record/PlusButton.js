@@ -16,11 +16,8 @@ const Button = styled.button`
 class PlusButton extends React.Component {
     hanleClick = (e) => {
         const targetComponent = e.currentTarget.parentNode;
-        console.log(this);
         e.preventDefault();
-        // 상태값을 onCreate 를 통하여 부모에게 전달
-        this.props.onClicked(this.state);
-        //add table td
+        this.props.onClicked();
     }
 
     render() {

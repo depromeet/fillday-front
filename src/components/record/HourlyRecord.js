@@ -24,7 +24,6 @@ class HourlyRecord extends React.Component {
         return (
             <HourlyRecordComponent>
                 <PageSubTitle bold="bold">오늘의 기록</PageSubTitle>
-                <PlusButton onClicked = {this.bindClickEvent}/>
                 <HourlyRecordTable/>
             </HourlyRecordComponent>
         );

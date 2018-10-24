@@ -5,13 +5,33 @@ import HourlyRecordTableRow from './HourlyRecordTableRow';
 import PlusButton from './PlusButton';
 
 class HourlyRecordTable extends React.Component {
-    addRow(e) {
-        console.log(e)
+    id = 0;
+    state = {
+        hourlyList: [],
+        rowData: null
     }
+    addRow = () => {
+        const { hourlyList } = this.state;
+        this.setState({
+            hourlyList: hourlyList.concat({ id: this.id++, ...this.state.rowData }),
+            rowData: null
+
+        })
+        console.log(HourlyRecordTableRow.state)
+    }
+
     render() {
+        const { hourlyList } = this.state;
+        let list;
+        list = hourlyList.map(
+            rowData => (<HourlyRecordTableRow key={rowData.id} info={rowData} />)
+        );
+        if (hourlyList.length === 0) {
+            list = <HourlyRecordTableRow/>
+        }
         return (
             <React.Fragment>
-                <PlusButton onClicked = {this.addRow}/>
+                <PlusButton onClicked={this.addRow} />
                 <table className="hourly-reocrd-table">
                     <thead>
                         <tr>
@@ -22,7 +42,7 @@ class HourlyRecordTable extends React.Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <HourlyRecordTableRow/>
+                        {list}
                     </tbody>
                 </table>
             </React.Fragment>
