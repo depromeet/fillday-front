@@ -18,7 +18,7 @@ const HourlyRecordComponent = styled.div`
 
 class HourlyRecord extends React.Component {
     bindClickEvent() {
-        console.log("dsaasdasd")
+        console.log("HourlyRecord bindClickEvent")
     }
     render() {
         return (

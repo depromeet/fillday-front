@@ -5,9 +5,14 @@ import HourlyRecordTableRow from './HourlyRecordTableRow';
 import PlusButton from './PlusButton';
 
 class HourlyRecordTable extends React.Component {
-    id = 0;
     state = {
-        hourlyList: [],
+        hourlyList: [{
+            from: 2,
+            to: 3,
+            plan: '아무것도 안하기',
+            immersion: 3,
+            memo: 'ㅇㅇ'
+        }],
         rowData: null
     }
     addRow = () => {
@@ -17,14 +22,15 @@ class HourlyRecordTable extends React.Component {
             rowData: null
 
         })
-        console.log(HourlyRecordTableRow.state)
+        console.log(this.state)
     }
 
     render() {
         const { hourlyList } = this.state;
+        console.log("hourlyList", hourlyList);
         let list;
         list = hourlyList.map(
-            rowData => (<HourlyRecordTableRow key={rowData.id} info={rowData} />)
+            (rowData, index) => (<HourlyRecordTableRow key={index} rowData={rowData} />)
         );
         if (hourlyList.length === 0) {
             list = <HourlyRecordTableRow/>

@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { PageSubTitle } from './RecordStyle';
 import PlusButton from './PlusButton';
+import TodoList from './TodoList';
 
 const TodoComponent = styled.div`
     display: inline-block;
@@ -20,7 +21,7 @@ class Todo extends React.Component {
         return (
             <TodoComponent>
                 <PageSubTitle bold="bold">오늘의 할 일</PageSubTitle>
-                <PlusButton/>
+                <TodoList/>
             </TodoComponent>
         );
     }

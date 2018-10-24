@@ -14,16 +14,15 @@ const Button = styled.button`
 `
 
 class PlusButton extends React.Component {
-    hanleClick = (e) => {
+    handleClick = (e) => {
         const targetComponent = e.currentTarget.parentNode;
         e.preventDefault();
         this.props.onClicked();
     }
 
     render() {
-        console.log(this.props);
         return (
-            <Button onClick={this.hanleClick}>+</Button>
+            <Button onClick={this.handleClick}>+</Button>
         );
     }
 }
