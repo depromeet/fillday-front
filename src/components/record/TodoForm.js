@@ -7,14 +7,11 @@ import styled from 'styled-components';
 const TodoFormComponent = styled.div`
     display: flex;
     padding: 10px 0;
-    &:first-child {
-        margin-top:10px;
-    }
 `
 const CheckBox = ({name}) => (
     <div className="checkbox">
     <input type="checkbox" id={name} name={name} />
-    <label for={name}></label>
+    <label htmlFor={name}></label>
     </div>
 )
 
@@ -30,7 +27,7 @@ class TodoForm extends Component {
         })
     }
     render() {
-        console.log(this.props)
+        console.log('this.props.key', this.props)
         return (
             <TodoFormComponent>
                 <CheckBox name={this.props.data.id}/>

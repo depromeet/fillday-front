@@ -5,27 +5,32 @@ import TodoForm from './TodoForm';
 class TodoList extends Component {
     id = 0;
     state = {
-        todoList:[{
-            id:0,
-            data:''
-        }]
+        todoList:[]
+    }
+    defaultProps = {
+        id: 0,
+        value:'',
+        done: false
     }
     addList = () => {
         const { todoList } = this.state;
         this.setState({
-            todoList: todoList.concat({ id: this.id++, ...this.state.rowData })
+            todoList: todoList.concat({ id: this.id++, ...this.state })
 
         })
     }
 
     render() {
         const {todoList} = this.state;
-        let list = todoList.map((data)=> (
+        let list;
+        if(todoList.length === 0) {
+            this.setState({
+                todoList: todoList.concat({ id: this.id++, ...this.defaultProps })
+            })
+        }
+        list = todoList.map((data)=> (
             <TodoForm key={data.id} data={data}/>
         ))
-        if(todoList.length === 0) {
-            list = <TodoForm/>
-        }
         return (
             <div>
                 <PlusButton onClicked={this.addList}/>

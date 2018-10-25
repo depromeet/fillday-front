@@ -13,4 +13,14 @@
 .hourly-reocrd-table td {
     border-bottom: 1px solid #e7e8e7;
     height: 67px;
+    padding: 0px 5px;
+    box-sizing: content-box;
+}
+
+.hourly-reocrd-table th:nth-child(1) {
+    width: 173px;
+}
+.hourly-reocrd-table th:nth-child(2),
+.hourly-reocrd-table th:nth-child(4) {
+    width: 272px;
 }

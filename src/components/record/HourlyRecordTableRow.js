@@ -2,11 +2,12 @@ import * as React from 'react';
 import Select from "react-select";
 import styled from 'styled-components';
 import { Input } from './RecordStyle';
+import CustomSelect from './CustomSelect';
 
 const options = [
-    { value: 0, label: 'Best', name: 'immersion'},
-    { value: 1, label: 'Soso', name: 'immersion'},
-    { value: 2, label: 'Bad', name: 'immersion'}
+    { value: 0, name: 'Best', className: 'custom-class' },
+    { value: 1, name: 'Soso', className: 'custom-class' },
+    { value: 2, name: 'Bad', className: 'custom-class' }
 ];
 
 class HourlyRecordTableRow extends React.Component {
@@ -27,7 +28,7 @@ class HourlyRecordTableRow extends React.Component {
         console.log(selectedOption)
         this.setState({ selectedOption });
         this.setState({
-            [selectedOption.name]:selectedOption.value
+            [selectedOption.name]: selectedOption.value
         })
     }
     changeEdit = (e) => {
@@ -35,13 +36,26 @@ class HourlyRecordTableRow extends React.Component {
         e.target.value = this.state[e.target.name];
     }
     render() {
-        const {plan, memo} = this.props.rowData;
+        const { plan, memo } = this.props.rowData;
         return (
             <tr>
                 <td>
-                    <Select onChange={this.handleChange}>00:00</Select>
+                <CustomSelect
+                        name="immersrion"
+                        value=""
+                        onChange={this.handleChange}
+                        optionList={options}
+                        mini
+                    />
                     ~
-                    <Select onChange={this.handleChange}>00:00</Select>
+                    <CustomSelect
+                        name="immersrion"
+                        value=""
+                        onChange={this.handleChange}
+                        optionList={options}
+                        mini
+                    />
+
                 </td>
                 <td>
                     <Input
@@ -49,23 +63,24 @@ class HourlyRecordTableRow extends React.Component {
                         placeholder="계획을 입력해주세요"
                         border="border"
                         name="plan"
-                        value={plan}
+                        value={this.state.plan}
                         onChange={this.handleChange}
                         onClick={this.changeEdit}>
                     </Input>
                 </td>
                 <td>
+                    <CustomSelect
+                        name="immersrion"
+                        value=""
+                        onChange={this.handleChange}
+                        optionList={options}
+                    />
                     {/* <Select
                         onChange={this.handleChange}
                         value={immersrion}>
                         options={immersrionOptions}
                         ></Select> */}
-                    <Select
-                        name="selectedOption"
-                        value={this.state.selectedOption}
-                        onChange={this.handleSelectChange}
-                        options={options}
-                    />
+                
                 </td>
                 <td>
                     <Input
