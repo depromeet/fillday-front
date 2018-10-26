@@ -72,6 +72,7 @@
     cursor: pointer;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
     margin-left: 60px;
     background-color: #262626;
@@ -80,7 +81,6 @@
 .header-write-img {
     width: 16px;
     height: 16px;
-    margin-left: 41px;
     background-image: url("./imgs/pencil.png");
     background-repeat: no-repeat;
 }
