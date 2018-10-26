@@ -3,6 +3,7 @@
 */
 import * as React from 'react';
 import DateUtil from '../../utils/dates';
+import { COLOR, EVAL } from '../..//utils/color';
 
 // 상대 날짜 표기 박스
 interface ISquareProps {
@@ -15,20 +16,28 @@ function DailySquare (props: ISquareProps) {
     return (
         <div className="daily-square daily-square-pastdays">
             <div className="daily-square-content">
-                {/* 날짜, 왼쪽 부분 */}
-                <div className="daily-square-number">
-                    {props.day}
-                </div>
-
-                {/* 요일, 어제오늘 표시 - 오른쪽 */}
-                <div className="daily-square-right">
+                <div className="daily-square-date">
+                    {/* 날짜 */}
+                    <div className="daily-square-number">
+                        {props.day}
+                    </div>
                     {/* 요일 */}
                     <div className="daily-square-string">
                         {props.weekday}
                     </div>
-                    {/* 어제/오늘 */}
-                    <div className="daily-square-relative">
-                        {props.relativeDay}
+                </div>
+                <div className="daily-square-title">
+                    양념갈비 먹었다
+                </div>
+                <div className="daily-square-eval">
+                    <div style={{
+                        width: "8px",
+                        height: "8px",
+                        borderRadius:"50%",
+                        backgroundColor: COLOR[3],
+                    }} />
+                    <div className="daily-square-eval-text">
+                        {EVAL[3]}
                     </div>
                 </div>
             </div>
@@ -59,6 +68,9 @@ export default function RelativeDays () {
     }
     return (
         <div className="report-section">
+            <div className="weekly-fillday">
+                주간 필데이
+            </div>
             <div className="relative-days">
                 {dailySquares}
             </div>

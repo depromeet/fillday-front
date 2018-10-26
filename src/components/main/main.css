@@ -4,6 +4,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+.main-page {
+    background-color: #f6f6f6;
+}
 .main-header {
     display: block;
     /* img 태그 + srcset 혹은 img-srcset으로 변경 필요  */
@@ -147,19 +150,20 @@
 .main-writing-logo {
     position: absolute;
     top: 36px;
-    left: 81px;
-    background-image: url("./imgs/writing.png");
-    height: 76px;
-    width: 70px;
+    left: 66px;
+    background-image: url("./imgs/graphic.png");
+    background-size: cover;
+    height: 100px;
+    width: 100px;
     background-repeat: no-repeat;
 }
 
 .fillday-ani {
     position: absolute;
-    top: 23px;
-    left: 60px;
-    height: 115px;
-    width: 115px;
+    top: 35px;
+    left: 65px;
+    height: 100px;
+    width: 100px;
     background-image: url("./imgs/fill.png");
     background-repeat: repeat-x;
     animation: wave linear forwards 3s;
@@ -209,18 +213,11 @@
     color: #969696;
   }
 
-/* 하단 리포트 부분 */
-.report-section {
-    display: flex;
-    flex-direction: row;
-    margin-top: 200px;
-    margin-bottom: 127px;
-}
 /* 상대 날짜로 날짜 표기 및 잔디 표기 */
 .main-body {
     display: block;
     width: 1920px;
-    height: 900px;
+    height: 1470px;
     padding: 0;
     margin: 0;
     margin-left: auto;
@@ -230,14 +227,20 @@
     z-index: 3;
 }
 
+/* 하단 리포트 부분 */
+.report-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 200px;
+    margin-bottom: 127px;
+}
 /* 상대 날짜로 날짜 선택 가능하도록 표기 */
 .relative-days {
     width: 1232px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-left: 376px;
-    margin-right: 134px;
+    margin-left: 360px;
 }
 .daily-square {
     width: 276px;
@@ -256,39 +259,37 @@
 
 .daily-square-content {
     display: flex;
-    flex-direction: row;
-    margin-top: 21px;
-}
-.daily-square-number {
-    height: 40px;
-    font-family: NanumBarunGothic;
-    font-size: 48px;
-    line-height: 40px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    letter-spacing: normal;
-    text-align: left;
-    color: #202020;
-    margin-left: 14px;
+    flex-direction: column;
+    margin-top: 23px;
+    margin-left: 24px;
 }
 
-.daily-square-right {
-    margin-left: auto;
-    margin-right: 14px;
-    text-align: right;
+.daily-square-date {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
 }
-.daily-square-string {
-    height: 14px;
-    line-height: 14px;
+.daily-square-number {
     font-family: NanumBarunGothic;
-    font-size: 16px;
+    font-size: 30px;
+    height: 30px;
     font-weight: bold;
     font-style: normal;
     font-stretch: normal;
     letter-spacing: normal;
-    color: #202020;
-    margin-bottom: 8px;
+    text-align: left;
+    color: #262626;
+}
+
+.daily-square-string {
+    font-family: NanumBarunGothic;
+    font-size: 16px;
+    font-weight: 200;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    color: #262626;
+    margin-left: 9px;
 }
 
 .daily-square-relative {
@@ -303,35 +304,6 @@
     color: #202020;
 }
 
-.goto-report {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-family: NanumMyeongjo;
-    font-size: 32px;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 0.88;
-    letter-spacing: normal;
-    text-align: right;
-    color: #202020;
-}
-.goto-text {
-    margin-bottom: 16px;
-}
-.goto-report-text {
-    text-align: right;
-    opacity: 0.8;
-    font-family: NanumBarunGothic;
-    font-size: 16px;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    letter-spacing: normal;
-    color: rgba(150, 30, 30, 0.8);
-    cursor: pointer;
-}
 /* 월별 잔디 표시 설정 */
 
 /* 전체 잔디 표시기  */
@@ -345,6 +317,7 @@
 .lawn-month-list {
     display: flex;
     flex-direction: row;
+    margin-left: 24px;
 }
 .monthly-text-month {
     text-align: left;
@@ -357,7 +330,7 @@
     text-align: left;
     color: #202020;
     margin-bottom: 27px;
-    margin-right: 125px;
+    margin-right: 175px;
 }
 
 /* 매일 잔디 박스 */
@@ -365,52 +338,115 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 748px;
-    height: 252px;
+    width: 1200px;
+    height: 364px;
+    border-radius: 2px;
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.06);
+    background-color: #ffffff;
+    padding-left: 24px;
+    padding-top: 24px;
 }
 .monthly-box-daily-lawn {
     position: relative;
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
     background-color: #000000;
-    margin-bottom: 12px;
-    margin-right: 10px;
+    margin-bottom: 16px;
+    margin-right: 13px;
 }
 .lawn-tooltip {
     position: relative;
     top: -20px;
 }
 
-/* footer 설정 */
-
-.main-footer {
-    width: 1920px;
-    height: 300px;
-    background-color: #808080;
-    margin-left: auto;
-    margin-right: auto;
-    overflow: hidden;
+/* 개인적인 추가 */
+.tooltip-box {
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.06);
+    border: solid 1px #e9ecef;
+    background-color: #ffffff;
+    padding: 24px;
 }
-.main-footer-text  {
-    margin-top: 127px;
-    margin-left: 353px;
-    height: 47px;
-    opacity: 0.8;
+.tooltip-time{
+  height: 14px;
+  font-family: NanumBarunGothicOTF;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: left;
+  color: #868e96;
+  margin-bottom: 20px;
+}
+.tooltip-box li {
+  height: 16px;
+  font-family: NanumBarunGothicOTF;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: left;
+  color: #555555;
+}
+
+.weekly-fillday {
     font-family: NanumMyeongjo;
-    font-size: 48px;
+    font-size: 36px;
     font-weight: 800;
     font-style: normal;
     font-stretch: normal;
-    line-height: 0.58;
     letter-spacing: normal;
     text-align: left;
-    color: rgba(250, 250, 250, 0.8);
+    color: #262626;
+    margin-bottom: 57px;
+    margin-left: 361px;
+}
+.halfyear-fillday {
+    font-family: NanumMyeongjo;
+    font-size: 36px;
+    font-weight: 800;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #262626;
+    margin-bottom: 57px;
 }
 
-/* 개인적인 추가 */
-.tooltip-box {
-  border-radius: 8px;
-  box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.06);
-  border: solid 1px #e9ecef;
-  background-color: #ffffff;
+.daily-square-title {
+    font-family: NanumBarunGothic;
+    font-size: 24px;
+    height: 24px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #262626;
+    margin-top: 30px;
+}
+
+.daily-square-eval {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top:54px;
+}
+.daily-square-eval-text {
+    width: 47px;
+    height: 16px;
+    font-family: NanumBarunGothic;
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    line-height: 1;
+    text-align: left;
+    color: #969696;
+    margin-left: 9px;
 }

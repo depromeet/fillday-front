@@ -7,7 +7,7 @@ import './main.css';
 class MainPage extends React.Component {
     public render() {
         return (
-            <div>
+            <div className="main-page">
                 <MainHeader />
                 <MainBody />
             </div>

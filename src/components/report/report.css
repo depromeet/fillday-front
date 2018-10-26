@@ -1,0 +1,309 @@
+* {
+    box-sizing: border-box;
+}
+.report-main {
+    display: block;
+    width:1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+}
+.report-title {
+    display: inline-block;
+    height: 35px;
+    font-family: NanumMyeongjo;
+    font-size: 36px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: left;
+    color: #262626;
+    margin-right: 16px;
+}
+
+.report-detailed-title {
+    display: inline-block;
+    height: 16px;
+    font-family: NanumBarunGothicOTF;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: left;
+    color: #969696;
+}
+.report-subtitle {
+    display: inline-block;
+    height: 16px;
+    font-family: NanumBarunGothicOTF;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: left;
+    color: #565656;
+}
+
+.report-box-shadow {
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.06);
+    background-color: #ffffff !important;
+}
+.weekly-graph-report {
+    display: flex;
+    flex-direction: row;
+    width: 1200px;
+    height: 320px;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+}
+.weekly-line-graph {
+    box-sizing: border-box;
+    width: 880px;
+    border-right: 1px solid #e9ecef;
+    padding-left: 60px;
+}
+.line-ytics {
+  height: 11px;
+  font-family: NanumBarunGothicOTF;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: left;
+  color: #565656 !important;
+}
+.weekly-circle-graph {
+    align-self: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.report-circle {
+    width: 110px;
+    height: 95px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: visible;
+}
+.report-circle-avg-text {
+    width: 12px;
+    height: 20px;;
+    font-family: NanumBarunGothicOTF;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: center;
+    color: #495057;
+}
+.circle-comment-title {
+    font-family: NanumBarunGothicOTF;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: center;
+    color: #343a40;
+    margin-bottom: 17px;
+}
+.circle-comment {
+    font-family: NanumBarunGothicOTF;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    text-align: center;
+    color: #868e96;
+}
+
+.subgraph-report {
+    display: flex;
+    flex-direction: row;
+}
+.daily-dist {
+    width: 580px;
+    height: 280px;
+    margin-right: 40px;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.daily-bar-graph {
+    margin-top: 25px;
+    font-family: NanumBarunGothicOTF;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: -0.5px;
+    text-align: left;
+    color: #868e96;
+}
+.calendar-data {
+    width: 580px;
+    height: 280px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+
+
+/* 하단 기록 리포트 */
+.list-report {
+    margin-top: 120px;
+}
+
+.list-title {
+    display: flex;
+    flex-direction: row;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+.list-col-name  {
+    white-space: nowrap;
+    overflow: visible;
+  height: 14px;
+  font-family: NanumBarunGothicOTF;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: left;
+  color: #969696;
+}
+
+.list-item-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.list-item-detail {
+    white-space: nowrap;
+    overflow: visible;
+  height: 18px;
+  font-family: NanumBarunGothicOTF;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: left;
+  color: #262626;
+  margin-left: 60px;
+}
+
+.list-item-subject {
+    display: block;
+    width: 315px ;
+    overflow: hidden ;
+}
+
+.list-item-level {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 45px;
+    margin-right: 1px;
+}
+.list-item-dot {
+    display: inline-block;
+    margin-right: 8px;
+    width: 10px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+/* bar chart를 위한 기본 도형 ㅠ */
+.list-item-bar-container {
+    width: 385px;
+    display: flex;
+    align-items: center;
+}
+.list-item-bar {
+    display: flex;
+    flex-direction: row;
+    height: 10px;
+    background-color: #f6f6f6;
+    border: solid 1px #d4d4d4;
+    animation: App-logo-spin 0.7s ease-in forwards;
+
+    border-radius: 5px;
+}
+.chart-bar-horizontal {
+    border-radius: 4px;
+    height: 8px;
+}
+@keyframes App-logo-spin {
+  from { width:0px; }
+  to { width: 385px; }
+}
+
+.chart-bar-vertical {
+    border-radius: 3px;
+    widows: 6px;
+}
+
+.list-item-done {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.list-tooltip {
+    padding: 24px;
+    border-radius: 8px;
+}
+.list-tooltip-time {
+  height: 14px;
+  font-family: NanumBarunGothicOTF;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: left;
+  color: #868e96;
+  margin-bottom: 20px;
+}
+.list-tooltip-todo  li {
+  height: 16px;
+  font-family: NanumBarunGothicOTF;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: left;
+  color: #555555;
+  margin-bottom: 12px;
+}

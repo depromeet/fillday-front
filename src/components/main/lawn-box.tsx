@@ -4,6 +4,7 @@
 import * as React from 'react';
 import DateUtil from '../../utils/dates';
 import * as ReactTooltip from 'react-tooltip';
+import { COLOR } from '../..//utils/color';
 
 interface IDailyLawnProps {
     date: DateUtil;
@@ -21,22 +22,22 @@ class DailyLawn extends React.Component<IDailyLawnProps, any> {
                 data-for={`lawn-${this.props.date.toString()}`}
                 className="monthly-box-daily-lawn"
                 style={{
-                    opacity: 0.20 * this.props.level
+                    backgroundColor: COLOR[this.props.level],
                 }}
                 /> 
                 <ReactTooltip 
+                border={true}
                 type='light'
                 effect='solid'
                 id={`lawn-${this.props.date.toString()}`}
+                className="tooltip-box"
                 >
-                    <div className="lawn-tooltip-date">
+                    <div className="tooltip-time">
                         {this.props.date.toString()}
                     </div>
-                    <div className="lawn-tooltip-summary">
-                        <li>
-                            평균 집중도: {this.props.level}
-                        </li>
-                    </div>
+                    <li>
+                        평균 집중도: {this.props.level}
+                    </li>
                 </ReactTooltip>
             </React.Fragment>
         );
@@ -60,7 +61,7 @@ export default class LawnBox extends React.Component<ILawnBoxProps, any> {
                 <DailyLawn 
                 key={`${propsDate.getMonth()}-${propsDate.getDay()}-lawn`}
                 date={new DateUtil(propsDate)}
-                level={Math.floor(Math.random() * 5) + 1}
+                level={Math.floor(Math.random() * 4)}
                 />
             ))
             if (propsDate.toString() === today.toString()) {

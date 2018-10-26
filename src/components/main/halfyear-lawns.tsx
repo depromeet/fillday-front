@@ -46,6 +46,9 @@ export default class HalfYearLawns extends React.Component {
         return (
             <div
             className="half-year-lawns">
+                <div className="halfyear-fillday">
+                    반년간의 필데이
+                </div>
                 <TextMonth daysToShow={daysToShow}/>
                 <LawnBox daysToShow={daysToShow}/>
             </div>
