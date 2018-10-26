@@ -18,6 +18,26 @@ export const Input = styled.input`
     `}
 
 `
+export const TextArea = styled.textarea`
+    border: none;
+    padding: 5px 0;
+    width: 100%;
+    height: 20px;
+    font-size: 14px;
+    color: #969696;
+    &: focus {
+        outline: none !important;
+        border-bottom: 1px solid #d90b3e;
+    }
+    &::placeholder {
+        color: #969696;
+    }
+    ${props => props.border && `
+         border-bottom: 1px dotted #e7e8e7;
+    `}
+    resize: none;
+
+`
 
 export const PageSubTitle = styled.div`
     display: inline-block;

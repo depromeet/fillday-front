@@ -18,13 +18,10 @@ const HourlyRecordComponent = styled.div`
 `
 
 class HourlyRecord extends React.Component {
-    bindClickEvent() {
-        console.log("HourlyRecord bindClickEvent")
-    }
     render() {
         const {onTimeLineStartChnage, onTimeLineEndChnage,
              onTimeLineScoreChnage, onTimeLineRetrospectChnage
-             , onTimeLinePlanChnage, timeLines}
+             , onTimeLinePlanChnage, timeLines, addTableow}
         = this.props;
         
         return (
@@ -36,6 +33,7 @@ class HourlyRecord extends React.Component {
                     onTimeLineScoreChnage={onTimeLineScoreChnage}
                     onTimeLineRetrospectChnage={onTimeLineRetrospectChnage}
                     onTimeLinePlanChnage={onTimeLinePlanChnage}
+                    addTableow={addTableow}
                     timeLines={timeLines}
                 />
             </HourlyRecordComponent>

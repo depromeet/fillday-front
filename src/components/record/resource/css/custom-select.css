@@ -3,6 +3,25 @@
     visibility: visible;
 }
 
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #e6acb6
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #d90b3e
+}
+
 .select-container{
     display: inline-block;
     position: relative;
@@ -18,10 +37,6 @@
     padding: 6px 28px;
 }
 .record-option-list .option {
-    padding: 6px 10px;
-}
-
-.mini .record-option-list {
     padding: 6px 10px;
 }
 
@@ -45,6 +60,8 @@
     box-sizing: border-box;
     top: 35px;
     border-top: 1px solid #eaeaea;
+    max-height: 200px;
+    overflow-y: auto;
 }
 .record-option-list .option:hover{
     background: #d90b3e;

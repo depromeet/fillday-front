@@ -120,11 +120,15 @@ export default class RecordComponent extends React.Component {
     }
 
     addTableow = (defaultFormat) => {
-        const {todoList} = this.state;
-        let id = todoList[todoList.length - 1].id;
+        const {timeLines} = this.state;
+        let id = timeLines[timeLines.length - 1].id;
         this.setState({
-            todoList: todoList.concat({ id: id + 1, ...defaultFormat})
+            timeLines: timeLines.concat({ id: id + 1, ...defaultFormat})
         })
+    }
+
+    save = () => {
+        console.log(this.state);
     }
 
 
@@ -137,6 +141,7 @@ export default class RecordComponent extends React.Component {
                 <RecordPageTitle />
                 <RecordTitle
                     onChange={this.changeTitle}
+                    onSave={this.save}
                     title={this.state.title} />
                 <FlexComponent>
                     <HourlyRecord 
@@ -146,6 +151,7 @@ export default class RecordComponent extends React.Component {
                         onTimeLineRetrospectChnage={this.changeTimelineTimeRetrospect}
                         onTimeLinePlanChnage={this.changeTimelineTimePlan}
                         timeLines={this.state.timeLines}
+                        addTableow={this.addTableow}
                     />
                     <Todo
                         onSummaryChange={this.changeTodoSummary}

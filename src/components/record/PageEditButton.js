@@ -30,9 +30,9 @@ const Button = styled.button`
     }
 `
 
-const PageEditButton = ({title}) => {
+const PageEditButton = ({title, onClick}) => {
     return (
-        <Button>
+        <Button onClick={onClick}>
             {title}
         </Button>
     );

@@ -20,7 +20,7 @@ const RecordTitleComponet = styled.div`
 class RecordTitle extends React.Component {
     render() {
         const title = this.props.title;
-        const {onChange} = this.props;
+        const {onChange, onSave} = this.props;
         return (
             <RecordTitleComponet>
                 <Input placeholder="오늘의 제목을 입력해주세요" 
@@ -30,7 +30,11 @@ class RecordTitle extends React.Component {
                     value={title}
                     fontSize="16px"
                     color="#262626"/>
-                <PageEditButton title="저장하기"></PageEditButton>
+                <PageEditButton 
+                title="저장하기" 
+                onClick={()=> {
+                    onSave()
+                }}/>
             </RecordTitleComponet>
         );
     }
