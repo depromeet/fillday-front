@@ -24,15 +24,23 @@ class GraphicMainTitle extends React.Component {
   }
 }
 
-export default class GraphicPane extends React.Component<IDateProps, any> {
+interface IReportProps {
+  date: Date;
+  onDateChange: (date:Date) => void;
+  reports: any;
+}
+
+export default class GraphicPane extends React.Component<IReportProps, any> {
   public render() {
     return (
         <div className="graphic-report">
           <GraphicMainTitle />
           <TopGraph
-          date={this.props.date} />
+          date={this.props.date} 
+          reports={this.props.reports} />
           <BottomGraph 
           date={this.props.date}
+          reports={this.props.reports}
           onDateChange={this.props.onDateChange}/>
         </div>
     );

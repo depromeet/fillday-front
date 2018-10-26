@@ -16,7 +16,7 @@ class App extends React.Component<any, IAppState> {
     super(props);
     this.onLogin = this.onLogin.bind(this);
     this.state = {
-      login: false
+      login: true
     }
   }
   public onLogin() {

@@ -17,7 +17,11 @@ function YaxisTick(props: any) {
   );
 }
 
-export default class LineGraph extends React.Component {
+interface IReportProps {
+  date: Date,
+  reports: any
+}
+export default class LineGraph extends React.Component<IReportProps, any> {
   public render() {
     const data = [
       {name: '10.16', "집중도": 0, tester:2},
