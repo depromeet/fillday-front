@@ -1,0 +1,116 @@
+.footer, .header {
+    background-color: #f6f6f6;
+    width: 1920px;
+}
+
+.header {
+    height: 104px;
+    margin-top: 18px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.header-main {
+    width:1200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header-logo {
+    background-image: url("./imgs/logo.png");
+    overflow: visible;
+    cursor: pointer;
+    width: 68px;
+    height: 68px;
+    object-fit: contain;
+    background-repeat: no-repeat;
+}
+
+.header-list {
+    width: 22px;
+    height: 24px;
+    margin-left: 785px;
+    background-image: url("./imgs/list.png");
+    overflow: visible;
+    cursor: pointer;
+    object-fit: contain;
+    background-repeat: no-repeat;
+}
+
+.header-alarm{
+    width: 22px;
+    background-repeat: no-repeat;
+    height: 24px;
+    margin-left: 32px;
+    background-image: url("./imgs/alarm.png");
+    overflow: visible;
+    cursor: pointer;
+    object-fit: contain;
+}
+
+.header-setting{
+    width: 24px;
+    height: 24px;
+    margin-left: 34px;
+    background-image: url("./imgs/setting.png");
+    overflow: visible;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    object-fit: contain;
+}
+
+.header-write {
+    width: 150px;
+    height: 39px;
+    background-color: #262626;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 60px;
+    background-color: #262626;
+    border-radius: 5px;
+}
+.header-write-img {
+    width: 16px;
+    height: 16px;
+    margin-left: 41px;
+    background-image: url("./imgs/pencil.png");
+    background-repeat: no-repeat;
+}
+.header-write-text {
+    height: 16px;
+    font-family: NanumMyeongjo;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+    margin-left: 8px;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 95px;
+}
+.footer-text {
+    height: 14px;
+    font-family: NanumBarunGothicOTF;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    text-align: center;
+    color: #969696;
+  }
