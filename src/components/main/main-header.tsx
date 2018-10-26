@@ -1,5 +1,6 @@
 import * as React from 'react';
 import DateUtil from '../../utils/dates';
+import { Link } from 'react-router-dom';
 
 interface IMainHeaderState {
     hover: boolean;
@@ -53,22 +54,24 @@ class MainHeader extends React.Component<any, IMainHeaderState> {
                     </div>
                 </div>
                 {/* 기록작성으로 이동 */}
-                <div className="main-writing-section"
-                onMouseOut={this.onMouseOut}
-                onMouseOver={this.onMouseOver}>
-                    {/* 손모양 로고 */}
-                    <div className={this.state.hover ? "fillday-ani": "" } />
-                    <div 
-                    className={`main-writing-logo`} />
-                    <div className="main-writing-hint">
-                        <div className="main-writing-title">
-                            필데이 작성하러 가기
-                        </div>
-                        <div className="main-writing-subs">
-                            오늘은 어땠나요? 하고 싶던 일을 얼마나 해냈는지, 오늘을 채워주세요.
+                <Link to ={'/fillday/report'}>
+                    <div className="main-writing-section"
+                    onMouseOut={this.onMouseOut}
+                    onMouseOver={this.onMouseOver}>
+                        {/* 손모양 로고 */}
+                        <div className={this.state.hover ? "fillday-ani": "" } />
+                        <div 
+                        className={`main-writing-logo`} />
+                        <div className="main-writing-hint">
+                            <div className="main-writing-title">
+                                필데이 작성하러 가기
+                            </div>
+                            <div className="main-writing-subs">
+                                오늘은 어땠나요? 하고 싶던 일을 얼마나 해냈는지, 오늘을 채워주세요.
+                            </div>
                         </div>
                     </div>
-                </div>
+                </Link>
             </div>
         );
     }
