@@ -3,26 +3,7 @@
 */
 import * as React from 'react';
 import DateUtil from '../../utils/dates';
-import arrow from "./imgs/noun-arrow-941551.png";
 
-// 레포트 페이지로 이동 
-
-function GotoReport () {
-    return (
-        <div className="goto-report">
-            <div className="goto-text">
-                잘, 채워지고 있나요?
-            </div>
-            <div className="goto-text">
-                이번주는 어땠어요? 
-            </div>
-            <div className="goto-report-text">
-                자세히 보기
-                <img className="main-header-arrow" src={arrow} />
-            </div>
-        </div>
-    )
-}
 // 상대 날짜 표기 박스
 interface ISquareProps {
     day: number;
@@ -32,9 +13,7 @@ interface ISquareProps {
 
 function DailySquare (props: ISquareProps) {
     return (
-        <div className="daily-square">
-            {/* 검정색 탑 바 */}
-            <div className="daily-square-topbar" />
+        <div className="daily-square daily-square-pastdays">
             <div className="daily-square-content">
                 {/* 날짜, 왼쪽 부분 */}
                 <div className="daily-square-number">
@@ -83,7 +62,6 @@ export default function RelativeDays () {
             <div className="relative-days">
                 {dailySquares}
             </div>
-            <GotoReport />
         </div>
     )
 }
