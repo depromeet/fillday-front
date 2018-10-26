@@ -6,17 +6,17 @@ const Button = styled.button`
     width: 100px;
     height: 38px;
     border: solid 1px #d90b3e;
-    background-color: #ffffff;
+    background-color: #d90b3e;
     font-family: NanumBarunGothic;
     font-size: 14px;
-    color: #d90b3e;
+    color: #ffffff;
     border-radius: 5px;
     margin-left: 30px;
     box-sizing: border-box;
     padding-left: 22px;
     &:before {
         content: '';
-        border: solid #d90b3e;
+        border: solid #ffffff;
         border-width: 0 1px 1px 0;
         display: inline-block;
         padding: 3px;

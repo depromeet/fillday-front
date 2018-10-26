@@ -1,43 +1,44 @@
 import React, { Component } from 'react';
-import "./checkbox.css";
+import "./resource/css/checkbox.css";
 import { Input } from './RecordStyle';
-import { isContext } from 'vm';
 import styled from 'styled-components';
 
 const TodoFormComponent = styled.div`
     display: flex;
     padding: 10px 0;
 `
-const CheckBox = ({name}) => (
+const CheckBox = ({name, complete, id, onChange}) => (
     <div className="checkbox">
-    <input type="checkbox" id={name} name={name} />
-    <label htmlFor={name}></label>
+        <input
+            type="checkbox" 
+            id={id}
+            name={name} 
+            defaultChecked={complete}
+            onChange={onChange}/>
+        <label htmlFor={id}></label>
     </div>
 )
 
 class TodoForm extends Component {
-    state = {
-        id: 0,
-        value:'',
-        done: false
-    }
-    handleChange = (e) => {
-        this.setState({
-            [e.target.name]: e.target.value
-        })
-    }
     render() {
-        console.log('this.props.key', this.props)
+        const{id, complete, summary} = this.props.todo;
+        const {onSummaryChange, onCompleteChange } = this.props;
         return (
             <TodoFormComponent>
-                <CheckBox name={this.props.data.id}/>
+                <CheckBox 
+                    name="complete"
+                    id={id}
+                    complete={complete}
+                    onChange={(e) => {
+                        onCompleteChange(id, e.target.checked)
+                    }}
+                   />
                 <Input
-                    type="text"
                     border="border"
-                    name="value"
-                    onChange={this.handleChange}
-                    value={this.state.value}>
-                </Input>
+                    name="summary"
+                    onChange={(e)=> {                     
+                        onSummaryChange(id, e.target.value)}}
+                    value={summary}/>
             </TodoFormComponent>
         );
     }

@@ -3,37 +3,24 @@ import PlusButton from './PlusButton';
 import TodoForm from './TodoForm';
 
 class TodoList extends Component {
-    id = 0;
-    state = {
-        todoList:[]
+    defaultFormat = {
+        summary: '',
+        complete: false
     }
-    defaultProps = {
-        id: 0,
-        value:'',
-        done: false
-    }
-    addList = () => {
-        const { todoList } = this.state;
-        this.setState({
-            todoList: todoList.concat({ id: this.id++, ...this.state })
-
-        })
-    }
-
     render() {
-        const {todoList} = this.state;
+        const {todoList, onSummaryChange, onCompleteChange, onAddLow} = this.props;
         let list;
-        if(todoList.length === 0) {
-            this.setState({
-                todoList: todoList.concat({ id: this.id++, ...this.defaultProps })
-            })
-        }
-        list = todoList.map((data)=> (
-            <TodoForm key={data.id} data={data}/>
+        list = todoList.map((todo, index)=> (
+            <TodoForm key= {index} todo={todo} 
+            onSummaryChange={onSummaryChange}
+            onCompleteChange={onCompleteChange}
+            />
         ))
         return (
             <div>
-                <PlusButton onClicked={this.addList}/>
+                <PlusButton onAddLow={()=> {
+                    onAddLow(this.defaultFormat);
+                }}/>
                 {list}
             </div>
         );

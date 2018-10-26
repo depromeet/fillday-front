@@ -18,11 +18,18 @@ const TodoComponent = styled.div`
 `
 
 class Todo extends React.Component {
+
     render() {
+        const {onSummaryChange, onCompleteChange, onAddLow} = this.props;
         return (
             <TodoComponent>
                 <PageSubTitle bold="bold">오늘의 할 일</PageSubTitle>
-                <TodoList/>
+                <TodoList 
+                    todoList={this.props.todoList}
+                    onSummaryChange={onSummaryChange}
+                    onCompleteChange={onCompleteChange}
+                    onAddLow={onAddLow}
+                    />
             </TodoComponent>
         );
     }

@@ -21,8 +21,11 @@ class PlusButton extends React.Component {
     }
 
     render() {
-        return (
-            <Button onClick={this.handleClick}>+</Button>
+        const {onAddLow} = this.props;
+         return (
+            <Button onClick={(e) => {
+                onAddLow();  
+            } }>+</Button>
         );
     }
 }

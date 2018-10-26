@@ -1,5 +1,5 @@
 import * as React from 'react';
-import "./custom-select.css"
+import "./resource/css/custom-select.css"
 import styled from 'styled-components';
 
 const CustomOption = ({ value, name, onChanged }) => {

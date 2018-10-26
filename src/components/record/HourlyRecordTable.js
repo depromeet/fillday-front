@@ -1,6 +1,5 @@
 import * as React from 'react';
-import "./hourly_record_table.css";
-import PageSubTitle from '../setting/PageSubTitle';
+import "./resource/css/hourly_record_table.css";
 import HourlyRecordTableRow from './HourlyRecordTableRow';
 import PlusButton from './PlusButton';
 
@@ -22,19 +21,26 @@ class HourlyRecordTable extends React.Component {
             rowData: null
 
         })
-        console.log(this.state)
     }
 
     render() {
-        const { hourlyList } = this.state;
-        console.log("hourlyList", hourlyList);
-        let list;
-        list = hourlyList.map(
-            (rowData, index) => (<HourlyRecordTableRow key={index} rowData={rowData} />)
-        );
-        if (hourlyList.length === 0) {
-            list = <HourlyRecordTableRow/>
-        }
+        const { onTimeLineStartChnage, onTimeLineEndChnage,
+            onTimeLineScoreChnage, onTimeLineRetrospectChnage, onTimeLinePlanChnage, timeLines }
+            = this.props;
+
+        console.log(this.props)
+        const list = timeLines.map(
+            (timeLine, index) => (
+                <HourlyRecordTableRow key={index}
+                    timeLine={timeLine}
+                    onTimeLineStartChnage={onTimeLineStartChnage}
+                    onTimeLineEndChnage={onTimeLineEndChnage}
+                    onTimeLineRetrospectChnage={onTimeLineRetrospectChnage}
+                    onTimeLineScoreChnage={onTimeLineScoreChnage}
+                    onTimeLinePlanChnage={onTimeLinePlanChnage}
+                />
+            )
+        )
         return (
             <React.Fragment>
                 <PlusButton onClicked={this.addRow} />

@@ -22,10 +22,22 @@ class HourlyRecord extends React.Component {
         console.log("HourlyRecord bindClickEvent")
     }
     render() {
+        const {onTimeLineStartChnage, onTimeLineEndChnage,
+             onTimeLineScoreChnage, onTimeLineRetrospectChnage
+             , onTimeLinePlanChnage, timeLines}
+        = this.props;
+        
         return (
             <HourlyRecordComponent>
                 <PageSubTitle bold="bold">오늘의 기록</PageSubTitle>
-                <HourlyRecordTable/>
+                <HourlyRecordTable
+                    onTimeLineStartChnage={onTimeLineStartChnage}
+                    onTimeLineEndChnage={onTimeLineEndChnage}
+                    onTimeLineScoreChnage={onTimeLineScoreChnage}
+                    onTimeLineRetrospectChnage={onTimeLineRetrospectChnage}
+                    onTimeLinePlanChnage={onTimeLinePlanChnage}
+                    timeLines={timeLines}
+                />
             </HourlyRecordComponent>
         );
     }

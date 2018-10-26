@@ -15,11 +15,24 @@
     border: solid 1px #eaeaea;
     position: relative;
     box-sizing: border-box;
+    padding: 6px 28px;
+}
+.record-option-list .option {
+    padding: 6px 10px;
+}
+
+.mini .record-option-list {
+    padding: 6px 10px;
+}
+
+.mini .record-costom-select {
+    padding: 6px 10px;
 }
 
 .mini .record-option-list,
 .mini .record-costom-select  {
     width: 72px;
+    margin: 0 3px;
 }
 
 .record-option-list {
@@ -33,9 +46,6 @@
     top: 35px;
     border-top: 1px solid #eaeaea;
 }
-.record-option-list .option {
-    padding: 2px 22px;
-}
 .record-option-list .option:hover{
     background: #d90b3e;
     color: #fff;
@@ -45,11 +55,7 @@
 }
 
 .record-costom-select:before {
-    -ms-transform: scaleX(-1) rotate(135deg);
-    -webkit-transform: scaleX(-1) rotate(135deg);
     transform: scaleX(-1) rotate(135deg);
-    -ms-transform-origin: left top;
-    -webkit-transform-origin: left top;
     transform-origin: left top;
     border-right: 1px solid #eaeaea;
     border-top: 1px solid #eaeaea;

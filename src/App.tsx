@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './App.css';
-import RecordComponent from './components/record/Record';
+import RecordComponent from './components/record/RecordComponent';
 
 
 class App extends React.Component {

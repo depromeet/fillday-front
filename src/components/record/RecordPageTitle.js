@@ -1,5 +1,5 @@
 import * as React from 'react';
-import CalandarImg from "./resource/cal.png"
+import CalandarImg from "./resource/img/cal.png"
 import PageTitle from '../setting/PageTitle';
 import { PageSubTitle } from './RecordStyle';
 import PageEditButton from './PageEditButton';
