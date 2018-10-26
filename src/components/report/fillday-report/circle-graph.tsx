@@ -28,7 +28,7 @@ export default class CircleGraph extends React.Component {
                 marginBottom: "40px"
             }}
             className="report-subtitle">
-                채운 색 등급
+                필 등급
             </div>
             <div 
             style={{

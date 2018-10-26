@@ -34,7 +34,7 @@ export default class LineGraph extends React.Component {
     return (
       <div className="weekly-line-graph">
         <div className="report-subtitle">
-          지난 주 변화된 색
+          주간 필-위크
         </div>
         <div className="report-line-graph">
           <LineChart 

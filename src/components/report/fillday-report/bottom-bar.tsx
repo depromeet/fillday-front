@@ -29,7 +29,7 @@ export default class BarGraph extends React.Component {
     return (
       <div className="report-box-shadow daily-dist">
         <div className="report-subtitle">
-          색 분포도
+          하루 필-데이
         </div>
         <div className="daily-bar-graph">
             <BarChart 
