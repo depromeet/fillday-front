@@ -102,6 +102,8 @@
     align-items: center;
     justify-content: center;
     height: 95px;
+    border-top: solid 1px #d4d4d4;
+    margin-top: 100px;
 }
 .footer-text {
     height: 14px;
