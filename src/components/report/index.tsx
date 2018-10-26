@@ -2,12 +2,16 @@ import * as React from 'react';
 import GraphicPane from './fillday-report/graphic-report';
 import ListPane from './written-diary';
 import './report.css';
+import { Redirect } from 'react-router';
 
 interface IReportStatus {
   date: Date;
 }
-export default class ReportPage extends React.Component<any, IReportStatus> {
-  constructor(props:any) {
+interface IReportProps{
+  login: boolean;
+}
+export default class ReportPage extends React.Component<IReportProps, IReportStatus> {
+  constructor(props:IReportProps) {
     super(props);
     this.onDateChange = this.onDateChange.bind(this);
     this.state = {
@@ -18,6 +22,11 @@ export default class ReportPage extends React.Component<any, IReportStatus> {
     this.setState({date});
   }
   public render() {
+    if (!this.props.login) {
+      return (
+        <Redirect to='/' />
+      );
+    }
     return (
       <div className="report-main">
         <GraphicPane 

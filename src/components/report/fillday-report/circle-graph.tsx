@@ -3,7 +3,7 @@ import { PieChart, Pie, Cell } from 'recharts';
 
 function LevelLabel(props: any) {
     return (
-        <text className='report-circle-avg-text' x={61.5} y={52.5} fill="#495057"
+        <text className='report-circle-avg-text' x={61.5} y={57.5} fill="#495057"
         textAnchor='end' dominantBaseline="central">
             {props.value}
         </text>
@@ -50,7 +50,7 @@ export default class CircleGraph extends React.Component {
                         animationDuration={1500}
                     >
                         {
-                            data.map((entry, index) => <Cell key={index} fill={COLORS[index % COLORS.length]} />)
+                            data.map((entry, index) => <Cell key={index} fill={COLORS[(index === innerCircle[0].value)? 1: 0]} />)
                         }
                     </Pie>
                     <Pie 

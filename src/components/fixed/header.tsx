@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 interface IHeaderProps{
     login: boolean;
-    onLogin: () => void;
 }
 export default class Header extends React.Component<IHeaderProps, any> {
     public render() {
@@ -29,12 +28,14 @@ export default class Header extends React.Component<IHeaderProps, any> {
                             </div>
                             </React.Fragment>
                         ): (
+                            <Link to={'/fillday/login'}>
                             <div className="header-start">
                                 <div className="header-start-img"/>
                                 <div className="header-start-text">
                                     시작하기
                                 </div>
                             </div>
+                            </Link>
                         )
                     }
                 </div>

@@ -65,7 +65,11 @@ class MainHeader extends React.Component<IMainHeaderProps, IMainHeaderState> {
                     </div>
                 </div>
                 {/* 기록작성으로 이동 */}
-                <Link to ={'/fillday/report'}>
+                <Link to ={
+                    this.props.login?
+                    '/fillday/report':
+                    '/fillday/login'
+                }>
                     <div className="main-writing-section"
                     onMouseOut={this.onMouseOut}
                     onMouseOver={this.onMouseOver}>
