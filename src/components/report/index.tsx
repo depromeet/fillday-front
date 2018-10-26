@@ -6,6 +6,7 @@ import { Redirect } from 'react-router';
 
 interface IReportStatus {
   date: Date;
+  reports: any;
 }
 interface IReportProps{
   login: boolean;
@@ -16,10 +17,18 @@ export default class ReportPage extends React.Component<IReportProps, IReportSta
     this.onDateChange = this.onDateChange.bind(this);
     this.state = {
       date: new Date(),
+      reports: undefined
     }
   }
   public onDateChange(date: Date) {
+    if (this.state.date.getMonth() !== date.getMonth() &&
+        this.state.date.getFullYear() !== date.getFullYear()) {
+        // 한달 데이터 새로 가져오기
+    }
     this.setState({date});
+  }
+  public componentDidMount() {
+    // 한달치 정보 가져오기.
   }
   public render() {
     if (!this.props.login) {
@@ -31,8 +40,10 @@ export default class ReportPage extends React.Component<IReportProps, IReportSta
       <div className="report-main">
         <GraphicPane 
         onDateChange={this.onDateChange}
+        reports={this.state.reports}
         date={this.state.date}/>
         <ListPane 
+        reports={this.state.reports}
         date={this.state.date}/>
       </div>
     );

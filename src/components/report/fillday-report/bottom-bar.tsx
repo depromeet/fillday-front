@@ -15,7 +15,11 @@ function YaxisTick(props: any) {
     </g>
   );
 }
-export default class BarGraph extends React.Component {
+interface IBarProps {
+  date: Date;
+  reports: any;
+}
+export default class BarGraph extends React.Component<IBarProps, any> {
   public render() {
     const data = [];
     for(let i = 1 ;i <= 24;i++) {
@@ -37,6 +41,7 @@ export default class BarGraph extends React.Component {
             data={data}
             width={460} height={160}>
                 <XAxis   
+                padding={{left:16, right:0}}
                 dataKey="name"
                 tickLine={false}
                 axisLine={false}
