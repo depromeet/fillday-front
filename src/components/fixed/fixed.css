@@ -4,15 +4,17 @@
 }
 
 .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     height: 104px;
-    margin-top: 18px;
-    position: fixed;
+    position: sticky;
     top: 0;
+    z-index: 6;
 }
 
 .header-main {
-    width:1200px;
-    margin-left: auto;
+    margin-left: 360px;
     margin-right: auto;
     display: flex;
     flex-direction: row;

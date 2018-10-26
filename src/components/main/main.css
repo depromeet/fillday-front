@@ -1,0 +1,452 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main-page {
+    background-color: #f6f6f6;
+}
+.main-header {
+    display: block;
+    /* img 태그 + srcset 혹은 img-srcset으로 변경 필요  */
+    background-image: url("./imgs/main-background.png");
+    background-repeat: no-repeat;
+    object-fit: contain;
+    width: 1920px;
+    height: 800px;
+    padding: 0;
+    padding-top:385px;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-y: visible;
+    z-index: 5;
+    position: relative;
+}
+
+.main-header-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 56px;
+    margin-bottom: 230px;
+}
+.main-header-logo {
+    display: block;
+    /* img 태그 + srcset 혹은 img-srcset으로 변경 필요  */
+    background-image: url("./imgs/logo.png");
+    object-fit: contain;
+    width: 64px;
+    height: 64px;
+    margin-left: 360px;
+}
+.main-header-logo, .main-header-setting{
+    cursor: pointer;
+}
+.main-header-setting {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    /* img 태그 + srcset 혹은 img-srcset으로 변경 필요  */
+    background-image: url("./imgs/setting.png");
+    margin-left: 1120px;
+}
+
+.main-header-date {
+    display: flex;
+    flex-direction: row;
+    margin-left: 362px;
+    margin-bottom: 95px;
+}
+.main-header-day {
+    height: 50px !important;
+    opacity: 0.8;
+    font-family: NanumBarunGothic;
+    font-size: 64px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: left;
+    color: rgba(250, 250, 250, 0.8);
+}
+.main-header-mm-yy {
+    margin-left: 20px;
+}
+.main-header-month {
+    text-align: left;
+    vertical-align: top;
+    height: 15px;
+    opacity: 0.8;
+    font-family: NanumBarunGothic;
+    font-size: 20px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: left;
+    color: rgba(250, 250, 250, 0.8);
+    margin-bottom: 20px;
+}
+.main-header-year {
+    text-align: left;
+    height: 15px;
+    opacity: 0.8;
+    font-family: NanumBarunGothic;
+    font-size: 20px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.0;
+    letter-spacing: normal;
+    text-align: left;
+    color: rgba(250, 250, 250, 0.8);
+}
+.main-header-greeting {
+    height: 48px;
+    font-family: NanumMyeongjo;
+    font-size: 48px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 0.58;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fafafa;
+    margin-bottom: 20px;
+    margin-left: 360px;
+}
+
+.main-header-mom {
+    height: 48px;
+    font-family: NanumMyeongjo;
+    font-size: 48px;
+    font-weight: 800;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 0.58;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fafafa;
+    margin-left: 360px;
+    margin-bottom: 80px;
+}
+
+.main-writing-section {
+    position: relative;
+    background-image: url("./imgs/writing-section.png");
+    background-repeat: no-repeat;
+    margin-left: 370px;
+    height: 180px;
+    width: 1200px;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.main-writing-logo {
+    position: absolute;
+    top: 36px;
+    left: 66px;
+    background-image: url("./imgs/graphic.png");
+    background-size: cover;
+    height: 100px;
+    width: 100px;
+    background-repeat: no-repeat;
+}
+
+.fillday-ani {
+    position: absolute;
+    top: 35px;
+    left: 65px;
+    height: 100px;
+    width: 100px;
+    background-image: url("./imgs/fill.png");
+    background-repeat: repeat-x;
+    animation: wave linear forwards 3s;
+    border-radius: 50%;
+}
+@keyframes wave{
+    0%{
+        background-position: 0 100px;
+
+    }				
+    100%{
+        background-position: 2000px -100px;
+    }
+
+
+}
+
+.main-writing-hint {
+    margin-top: 44px;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    margin-right: 101px;
+    margin-left: auto;
+}
+.main-writing-title{
+    height: 35px;
+    font-family: NanumMyeongjo;
+    font-size: 36px;
+    font-weight: 800;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 0.78;
+    letter-spacing: normal;
+    color: #262626;
+    margin-bottom: 20px;
+}
+.main-writing-subs {
+    height: 20px;
+    font-family: NanumBarunGothic;
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.4;
+    letter-spacing: normal;
+    color: #969696;
+  }
+
+/* 상대 날짜로 날짜 표기 및 잔디 표기 */
+.main-body {
+    display: block;
+    width: 1920px;
+    height: 1470px;
+    padding: 0;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fafafa;
+    overflow: hidden;
+    z-index: 3;
+}
+
+/* 하단 리포트 부분 */
+.report-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 200px;
+    margin-bottom: 127px;
+}
+/* 상대 날짜로 날짜 선택 가능하도록 표기 */
+.relative-days {
+    width: 1232px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 360px;
+}
+.daily-square {
+    width: 276px;
+    height: 196px;
+    background-color: #ffffff;
+    overflow: hidden;
+    cursor: pointer;
+    margin-bottom: 32px;
+    margin-right: 32px;
+    border-radius: 2px;
+    box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.06);
+}
+.daily-square-pastdays {
+    border-right: solid 8px #d90b3e;
+}
+
+.daily-square-content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 23px;
+    margin-left: 24px;
+}
+
+.daily-square-date {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+.daily-square-number {
+    font-family: NanumBarunGothic;
+    font-size: 30px;
+    height: 30px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #262626;
+}
+
+.daily-square-string {
+    font-family: NanumBarunGothic;
+    font-size: 16px;
+    font-weight: 200;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    color: #262626;
+    margin-left: 9px;
+}
+
+.daily-square-relative {
+    height: 14px;
+    line-height: 14px;
+    font-family: NanumBarunGothic;
+    font-size: 16px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    color: #202020;
+}
+
+/* 월별 잔디 표시 설정 */
+
+/* 전체 잔디 표시기  */
+.half-year-lawns {
+    display: flex;
+    flex-direction: column;
+    margin-left: 360px;
+}
+
+/* 월 텍스트 */
+.lawn-month-list {
+    display: flex;
+    flex-direction: row;
+    margin-left: 24px;
+}
+.monthly-text-month {
+    text-align: left;
+    font-family: NanumBarunGothic;
+    font-size: 16px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #202020;
+    margin-bottom: 27px;
+    margin-right: 175px;
+}
+
+/* 매일 잔디 박스 */
+.lawn-box {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 1200px;
+    height: 364px;
+    border-radius: 2px;
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.06);
+    background-color: #ffffff;
+    padding-left: 24px;
+    padding-top: 24px;
+}
+.monthly-box-daily-lawn {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    background-color: #000000;
+    margin-bottom: 16px;
+    margin-right: 13px;
+}
+.lawn-tooltip {
+    position: relative;
+    top: -20px;
+}
+
+/* 개인적인 추가 */
+.tooltip-box {
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.06);
+    border: solid 1px #e9ecef;
+    background-color: #ffffff;
+    padding: 24px;
+}
+.tooltip-time{
+  height: 14px;
+  font-family: NanumBarunGothicOTF;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: left;
+  color: #868e96;
+  margin-bottom: 20px;
+}
+.tooltip-box li {
+  height: 16px;
+  font-family: NanumBarunGothicOTF;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: left;
+  color: #555555;
+}
+
+.weekly-fillday {
+    font-family: NanumMyeongjo;
+    font-size: 36px;
+    font-weight: 800;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #262626;
+    margin-bottom: 57px;
+    margin-left: 361px;
+}
+.halfyear-fillday {
+    font-family: NanumMyeongjo;
+    font-size: 36px;
+    font-weight: 800;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #262626;
+    margin-bottom: 57px;
+}
+
+.daily-square-title {
+    font-family: NanumBarunGothic;
+    font-size: 24px;
+    height: 24px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #262626;
+    margin-top: 30px;
+}
+
+.daily-square-eval {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top:54px;
+}
+.daily-square-eval-text {
+    width: 47px;
+    height: 16px;
+    font-family: NanumBarunGothic;
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    line-height: 1;
+    text-align: left;
+    color: #969696;
+    margin-left: 9px;
+}
