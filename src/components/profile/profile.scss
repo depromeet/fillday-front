@@ -1,0 +1,109 @@
+.profileContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+
+  .profileWrapper {
+    display: flex;
+    width: 600px;
+    flex-direction: column;
+  }
+}
+
+.profileTitle {
+  display: inline-block;
+  height: 35px;
+  font-family: NanumMyeongjo;
+  font-size: 36px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: left;
+  color: #262626;
+  margin-right: 16px;
+}
+
+.profileLine {
+  margin-top: 23px;
+  width: 600px;
+  height: 1px;
+  background-color: #d4d4d4;
+  &:nth-of-type(3) {
+    margin-bottom: 340px;
+  }
+}
+
+.profileSubTitle {
+  margin-top: 32px;
+  font-family: NanumBarunGothicOTF;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+.conentWrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+
+  .content {
+    flex: 1;
+    font-family: NanumBarunGothicOTF;
+    font-size: 16px;
+    color: #555555;
+  }
+
+  .socialConnectButton {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 38px;
+    border: solid 1px #e7e8e7;
+    border-radius: 4px;
+    background-color: #ffffff;
+    font-family: NanumBarunGothicOTF;
+    font-size: 14px;
+    font-weight: bold;
+    color: #232323;
+
+    .imgWrapper {
+      margin-right: 8px;
+    }
+  }
+
+  .webAlarmActivationWrapper {
+    display: flex;
+    align-items: center;
+    font-family: NanumBarunGothicOTF;
+    font-size: 14px;
+    color: #969696;
+  }
+}
+
+.alramDurationSelectorWrapper {
+  & > div {
+    width: 300px;
+    height: 38px;
+
+    & > div {
+      border-radius: 0;
+    }
+  }
+}
+
+.alarmDaySelectorWrapper {
+  display: flex;
+  .alarmDaySelector {
+    width: 42px;
+    height: 38px;
+    background-color: #000000;
+  }
+}

@@ -1,0 +1,57 @@
+.profileInputContainer {
+    display: flex;
+    margin-top: 12px;
+    align-items: center;
+}
+
+.profileInputName {
+    width: 149px;
+    font-family: NanumBarunGothicOTF;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #555555;
+}
+
+.profileInputWrapper {
+    display: flex;
+  width: 300px;
+  height: 38px;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #ffffff;
+  &.inActive {
+    background-color: #f6f6f6;
+  }
+}
+
+.profileInputBox {
+  margin-left: 16px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.29;
+  color: #262626;
+  border: 0;
+  background-color: transparent;
+  width: 100%;
+}
+
+.profileInputUpdateBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    width: 140px;
+    height: 38px;
+    background-color: #262626;
+    border-radius: 4px;
+cursor: pointer;
+
+  font-family: NanumBarunGothicOTF;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffff;
+}
