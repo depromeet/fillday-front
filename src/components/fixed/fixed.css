@@ -8,7 +8,6 @@
     margin-top: 18px;
     position: fixed;
     top: 0;
-    left: 0;
 }
 
 .header-main {
@@ -113,4 +112,37 @@
     letter-spacing: normal;
     text-align: center;
     color: #969696;
-  }
+}
+
+.header-start {
+    width: 150px;
+    height: 40px;
+    margin-left: 980px;
+    background-color: #d90b3e;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.header-start-img {
+    width: 16px;
+    height: 16px;
+    background-image: url("./imgs/signBoard.png");
+    background-repeat: no-repeat;
+}
+.header-start-text {
+    height: 16px;
+    font-family: NanumMyeongjo;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+    margin-left: 8px;
+}
