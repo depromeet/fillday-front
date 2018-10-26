@@ -9,7 +9,11 @@ function LevelLabel(props: any) {
         </text>
     );
 }
-export default class CircleGraph extends React.Component {
+interface IReportProps {
+  date: Date,
+  reports: any
+}
+export default class CircleGraph extends React.Component<IReportProps, any> {
   public render() {
       
     const data = [{name: 'Nothing', value: 1}, {name: 'Bad', value: 1},
@@ -28,7 +32,7 @@ export default class CircleGraph extends React.Component {
                 marginBottom: "40px"
             }}
             className="report-subtitle">
-                필 등급
+                주간 필 등급
             </div>
             <div 
             style={{

@@ -4,13 +4,23 @@ import CircleGraph from './circle-graph';
 import { IDateProps } from './interfaces';
 // 그래프 리포트 상단
 
-export default class TopGraph extends React.Component<IDateProps, any> {
+interface IReportProps {
+  date: Date,
+  reports: any
+}
+export default class TopGraph extends React.Component<IReportProps, any> {
   public render() {
     console.log(this.props.date);
     return (
       <div className="report-box-shadow weekly-graph-report">
-        <LineGraph />
-        <CircleGraph />
+        <LineGraph 
+        date={this.props.date}
+        reports={this.props.reports}
+        />
+        <CircleGraph 
+        date={this.props.date}
+        reports={this.props.reports}
+        />
       </div>
     );
   }

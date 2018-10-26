@@ -151,7 +151,9 @@ function ListItem(props: IListDataProps) {
                     Best
                 </div>
             </div>
-            <div className="list-item-detail list-item-subject">
+            <div 
+            title={props.data.subject}
+            className="list-item-detail list-item-subject">
                 <div style={{overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap'}}>
                     {props.data.subject}
                 </div>

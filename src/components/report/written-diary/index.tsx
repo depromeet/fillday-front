@@ -16,7 +16,11 @@ function ListMainTitle(props?: any) {
   );
 }
 
-export default class ListPane extends React.Component<IDateProps, any> {
+interface IReportProps {
+  date: Date,
+  reports: any
+}
+export default class ListPane extends React.Component<IReportProps, any> {
   public render() {
     return (
       <div className="list-report">
