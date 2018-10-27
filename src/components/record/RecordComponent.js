@@ -1,4 +1,5 @@
 import * as React from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
 import PageTitle from '../setting/PageTitle';
 import RecordPageTitle from './RecordPageTitle';
@@ -6,6 +7,7 @@ import RecordTitle from './RecordTitle';
 import HourlyRecord from './HourlyRecord';
 import Todo from './Todo';
 import { POINT_CONVERSION_COMPRESSED } from 'constants';
+import { SetDateFormatting } from './Util';
 
 
 const RecordComponentStyle = styled.div`
@@ -19,7 +21,8 @@ const FlexComponent = styled.div`
     padding-bottom: 101px;
 `
 export default class RecordComponent extends React.Component {
-    state = {
+    isEditMode= false
+    defaultProps = {
         title: '',
         todoList: [{
             id: 0,
@@ -31,11 +34,75 @@ export default class RecordComponent extends React.Component {
             start:0,
             end:0,
             plan:'',
-            retrospect: 'dsasd',
+            retrospect: '',
+            score: ''
+        }]
+    };
+    state = {
+        title: '',
+        isEditMode: false,
+        todoList: [{
+            id: 0,
+            summary: '',
+            complete: false
+        }],
+        timeLines: [{
+            id: 0,
+            start:0,
+            end:0,
+            plan:'',
+            retrospect: '',
             score: 'Best'
         }]
-        
     };
+    componentDidMount = () => {
+        const userID = 'userId';
+        // this.getRequest();
+        const {selectedDate} = this.props;
+        const localData =JSON.parse(localStorage.getItem(selectedDate)); 
+        if(localData) {
+            this.setState({
+                title : localData.title,
+                today : localData.today,
+                todoList : localData.todoList,
+                timeLines : localData.timeLines,
+            })
+
+        } else {
+            this.setState({
+                today : selectedDate
+            })
+        }
+        // const that = this; 
+        // axios.get(`http://fillday.manjong.org/v1/todos/${userID}`)
+        // .then((response) => {
+        //     this.state = response.data
+        // })
+    }
+    getRequest = (date) => {
+        date = date? date : SetDateFormatting(new Date())
+        const localData =JSON.parse(localStorage.getItem(date)); 
+        if(localData) {
+            this.setState({
+                title : localData.title,
+                today : localData.today,
+                todoList : localData.todoList,
+                timeLines : localData.timeLines,
+            })
+        } else {
+            this.setState({
+                today : date,
+                ...this.defaultProps
+            })
+        }
+    }
+    isToday = (date) => {
+        const today = new Date();
+        return today.getFullYear() === date.getFullYear()
+        && today.getDate() === date.getDate()
+        && today.getMonth() === date.getMonth();
+    }
+
     changeTitle = (title) => {
         this.setState({
             title,
@@ -112,6 +179,13 @@ export default class RecordComponent extends React.Component {
         })
     }
 
+    changeMode = () => {
+        const {isEditMode} = this.state;
+        this.setState({
+            isEditMode: !isEditMode
+        })
+    }
+
     addTodoList = (defaultFormat) => {
         const {todoList} = this.state;
         let id = todoList[todoList.length - 1].id;
@@ -129,7 +203,27 @@ export default class RecordComponent extends React.Component {
     }
 
     save = () => {
-        console.log(this.state);
+        const {isEditMode} = this.state;
+        this.setState({
+            today: SetDateFormatting(new Date()),
+             isEditMode: !isEditMode
+        })
+        
+        let saveData = Object.assign({}, this.state);
+        delete saveData.isEditMode 
+        localStorage.setItem(SetDateFormatting(new Date()),JSON.stringify(saveData));
+        //local storage or session get userID
+        saveData.uid = "123";
+        axios.post('http://fillday.manjong.org/v1/todos', {
+            saveData
+        })
+        .then((responce) => {
+            console.log(responce);
+            //TODO : response 200 -> go to recordList 
+        })
+        .catch((error) => {
+            console.error(error);
+        })
     }
 
 
@@ -137,13 +231,27 @@ export default class RecordComponent extends React.Component {
         const flex = {
             display: "flex"
         }
+        let {today} = this.state;
+        today = today? today : SetDateFormatting(new Date());
+        const isToday = this.isToday(new Date(today));
+        // const isToday = false;
+    
         return (
             <RecordComponentStyle onChange={this.addSaveBtn}>
-                <RecordPageTitle />
+                <RecordPageTitle
+                 date={today}
+                 isToday={isToday}
+                 isEditMode={this.state.isEditMode}
+                 getRequest={this.getRequest}
+                />
                 <RecordTitle
                     onChange={this.changeTitle}
+                    changeMode={this.changeMode}
                     onSave={this.save}
-                    title={this.state.title} />
+                    title={this.state.title}
+                    isEditMode={this.state.isEditMode}
+                    isToday={isToday}
+                />
                 <FlexComponent>
                     <HourlyRecord 
                         onTimeLineStartChnage={this.changeTimelineTimeStart}
@@ -153,12 +261,16 @@ export default class RecordComponent extends React.Component {
                         onTimeLinePlanChnage={this.changeTimelineTimePlan}
                         timeLines={this.state.timeLines}
                         addTableow={this.addTableow}
+                        isEditMode={this.state.isEditMode}
+                        isToday={isToday}
                     />
                     <Todo
                         onSummaryChange={this.changeTodoSummary}
                         onCompleteChange={this.changeTodoComplete}
                         onAddLow={this.addTodoList}
-                        todoList={this.state.todoList} 
+                        todoList={this.state.todoList}
+                        isEditMode={this.state.isEditMode}
+                        isToday={isToday} 
                     />
                 </FlexComponent>
             </RecordComponentStyle>

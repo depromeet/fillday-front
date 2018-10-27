@@ -21,7 +21,7 @@ class HourlyRecord extends React.Component {
     render() {
         const {onTimeLineStartChnage, onTimeLineEndChnage,
              onTimeLineScoreChnage, onTimeLineRetrospectChnage
-             , onTimeLinePlanChnage, timeLines, addTableow}
+             , onTimeLinePlanChnage, timeLines, addTableow, isEditMode}
         = this.props;
         
         return (
@@ -35,6 +35,7 @@ class HourlyRecord extends React.Component {
                     onTimeLinePlanChnage={onTimeLinePlanChnage}
                     addTableow={addTableow}
                     timeLines={timeLines}
+                    isEditMode ={isEditMode}
                 />
             </HourlyRecordComponent>
         );

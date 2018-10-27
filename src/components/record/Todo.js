@@ -20,7 +20,7 @@ const TodoComponent = styled.div`
 class Todo extends React.Component {
 
     render() {
-        const {onSummaryChange, onCompleteChange, onAddLow} = this.props;
+        const {onSummaryChange, onCompleteChange, onAddLow, isEditMode} = this.props;
         return (
             <TodoComponent>
                 <PageSubTitle bold="bold">오늘의 할 일</PageSubTitle>
@@ -29,6 +29,7 @@ class Todo extends React.Component {
                     onSummaryChange={onSummaryChange}
                     onCompleteChange={onCompleteChange}
                     onAddLow={onAddLow}
+                    isEditMode={isEditMode}
                     />
             </TodoComponent>
         );

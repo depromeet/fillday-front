@@ -3,10 +3,6 @@ import PageSubTitle from './PageSubTitle';
 import Toggle from './Toggle';
 
 class SettingNotificationCycle extends React.Component {
-    handleToggle() {
-        //TODO  state 값 변경 -> state 값 추가 필요
-        console.log('handleToggle')
-    }
     render() {
         const {isSetting, cycle, dayOfWeek} = this.props.notificationCycle;
         return (

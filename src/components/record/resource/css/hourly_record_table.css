@@ -4,6 +4,30 @@
     border-spacing: 0;
     color:  #969696;
 }
+.hourly-reocrd-table td:nth-child(3) {
+    text-align: center;
+    position: relative;
+}
+
+.hourly-reocrd-table td:nth-child(3):before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: red;
+    position: absolute;
+    top: 30px;
+    left: 12px;
+    border-radius: 16px;
+}
+.hourly-reocrd-table td.color-Best:nth-child(3):before{
+    background: #d90b3e;
+}
+.hourly-reocrd-table td.color-Soso:nth-child(3):before{
+    background: #e6acb6;
+}
+.hourly-reocrd-table td.color-Bad:nth-child(3):before{
+    background: #f2dcda;
+}
 .hourly-reocrd-table th {
     color: #969696;
     text-align: left;

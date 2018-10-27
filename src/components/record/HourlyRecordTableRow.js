@@ -13,7 +13,7 @@ function timeFormatting(hour) {
 
 const getTimeoptions = () => {
     const options = [];
-    for(let i = 0; i < 23; i++) {
+    for (let i = 0; i < 23; i++) {
         options.push({
             value: i,
             name: timeFormatting(i)
@@ -31,18 +31,36 @@ const optionScores = [
 const timeOptions = getTimeoptions();
 
 class HourlyRecordTableRow extends React.Component {
-    pressEnter =(e) => {
+    pressEnter = (e) => {
         e.target.clientHeight = "1px";
     }
     render() {
-        const {start, end, plan, retrospect, score, id} = this.props.timeLine;
+        const { start, end, plan, retrospect, score, id } = this.props.timeLine;
         const { onTimeLineStartChnage, onTimeLineEndChnage,
-            onTimeLineScoreChnage, onTimeLineRetrospectChnage, onTimeLinePlanChnage }
+            onTimeLineScoreChnage, onTimeLineRetrospectChnage, onTimeLinePlanChnage, isEditMode }
             = this.props;
+        if (!isEditMode) {
+            return (
+                <tr>
+                    <td>
+                        {timeFormatting(start)} ~ {timeFormatting(end)}
+                    </td>
+                    <td>
+                        {plan}
+                    </td>
+                    <td className={`color-${score}`}>
+                        {score}        
+                    </td>
+                    <td>
+                        {retrospect}
+                    </td>
+                </tr>
+            )
+        }
         return (
             <tr>
                 <td>
-                <CustomSelect
+                    <CustomSelect
                         selectName={timeFormatting(start)}
                         id={id}
                         onChange={onTimeLineStartChnage}
@@ -72,8 +90,8 @@ class HourlyRecordTableRow extends React.Component {
                 </td>
                 <td>
                     <CustomSelect
-                      id={id}
-                      selectName={score}
+                        id={id}
+                        selectName={score}
                         onChange={onTimeLineScoreChnage}
                         optionList={optionScores}
                     />
@@ -87,7 +105,7 @@ class HourlyRecordTableRow extends React.Component {
                         onChange={(e) => {
                             onTimeLineRetrospectChnage(id, e.target.value);
                         }}
-                        />
+                    />
                 </td>
             </tr>
         );

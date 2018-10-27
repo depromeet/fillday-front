@@ -11,6 +11,9 @@ const Button = styled.button`
     position: absolute;
     top: 0;
     right: 0;
+    &:focus {
+        outline :none;
+    }
 `
 
 class PlusButton extends React.Component {
