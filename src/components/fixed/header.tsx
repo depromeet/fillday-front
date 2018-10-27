@@ -22,6 +22,7 @@ export default class Header extends React.Component<IHeaderProps, any> {
                                 data-for={"goto-report"}
                                 />
                                 <ReactTooltip
+                                place="bottom"
                                 border={true}
                                 type='light'
                                 effect='solid'
@@ -35,6 +36,7 @@ export default class Header extends React.Component<IHeaderProps, any> {
                             data-for={"goto-write"}
                             />
                             <ReactTooltip
+                            place="bottom"
                             border={true}
                             type='light'
                             effect='solid'
@@ -47,6 +49,7 @@ export default class Header extends React.Component<IHeaderProps, any> {
                             data-for={"goto-setting"}
                             />
                             <ReactTooltip
+                                place="bottom"
                             border={true}
                             type='light'
                             effect='solid'

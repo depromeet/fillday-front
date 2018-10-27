@@ -38,7 +38,6 @@
 }
 .report-subtitle {
     display: inline-block;
-    height: 16px;
     font-family: NanumBarunGothicOTF;
     font-size: 16px;
     font-weight: bold;
@@ -249,6 +248,7 @@
     height: 80px;
     margin-bottom: 10px;
     transition: box-shadow 0.1s cubic-bezier(0, 0, 0.2, 1);
+    cursor: pointer;
 }
 
 .list-item-detail {
