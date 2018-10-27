@@ -24,3 +24,21 @@
     width: 173px;
     vertical-align: middle;
 }
+
+.btn-kakao {
+    background-image: url('./resource/img/logo-kakao.png');
+    background-repeat: no-repeat;
+    background-position: 22px 10px;
+}
+
+.btn-facebook {
+    background-image: url('./resource/img/logo-facebook.png');
+    background-repeat: no-repeat;
+    background-position: 11px 10px;
+}
+
+.btn-google {
+    background-image: url('./resource/img/google.png');
+    background-repeat: no-repeat;
+    background-position: 18px 10px;
+}

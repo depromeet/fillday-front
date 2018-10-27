@@ -19,9 +19,9 @@ const Button = styled.button`
     position: absolute;
 `;
 
-const SettingButton = ({ clickEvent, edit, btnName, ...rest }) => {
+const SettingButton = ({ clickEvent, edit, btnName, className, ...rest}) => {
     return (
-        <Button onClick={clickEvent} edit={edit} {...rest}>{btnName}</Button>
+        <Button onClick={clickEvent} edit={edit} className={className} {...rest}>{btnName}</Button>
     );
 };
 

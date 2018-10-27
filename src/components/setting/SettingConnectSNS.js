@@ -3,6 +3,11 @@ import PageSubTitle from './PageSubTitle';
 import SettingButton from './SettingButton';
 
 class SettingConnectSNS extends React.Component {
+    state = {
+        kakao: null,
+        facebook: null,
+        google: null,
+    }
     render() {
         return (
             <div>

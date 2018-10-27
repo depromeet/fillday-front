@@ -3,15 +3,22 @@ import PageSubTitle from './PageSubTitle';
 import Toggle from './Toggle';
 
 class SettingNotificationDisable extends React.Component {
+    state = {
+        isSettingDisabled: false,
+        disabledTime: {
+            from: null,
+            to: null
+        }
+    }
     render() {
         return (
             <div>
-                <PageSubTitle title="방해금지"/>
+                <PageSubTitle title="방해금지" />
                 <div className="setting-item">
                     <div className="setting-item-title">
                         방해금지 활성화
                     </div>
-                    <Toggle/>
+                    <Toggle />
                 </div>
                 <div className="setting-item">
                     <div className="setting-item-title">

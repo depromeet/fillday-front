@@ -3,6 +3,12 @@ import PageSubTitle from './PageSubTitle';
 import SettingButton from './SettingButton';
 
 class SettingPrivacy extends React.Component {
+    state = {
+        name: '홍길동',
+        email: 'depromeet@gmail.com',
+        password: '12345',
+
+    }
     render() {
         const { name, email, password } = this.props.privacy;
         return (

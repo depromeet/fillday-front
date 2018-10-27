@@ -3,6 +3,11 @@ import PageSubTitle from './PageSubTitle';
 import Toggle from './Toggle';
 
 class SettingNotificationCycle extends React.Component {
+    state = {
+        isSetting: true,
+        cycle: null,
+        dayOfWeek:[]
+    }
     render() {
         const {isSetting, cycle, dayOfWeek} = this.props.notificationCycle;
         return (
