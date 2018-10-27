@@ -44,10 +44,12 @@ export default class Header extends React.Component<IHeaderProps, any> {
                             >
                                 필데이 채우기
                             </ReactTooltip>
-                            <div className="header-setting" 
-                            data-tip={true}
-                            data-for={"goto-setting"}
-                            />
+                            <Link to={'/fillday/setting'}>
+                                <div className="header-setting" 
+                                data-tip={true}
+                                data-for={"goto-setting"}
+                                />
+                            </Link>
                             <ReactTooltip
                                 place="bottom"
                             border={true}

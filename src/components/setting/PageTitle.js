@@ -7,7 +7,8 @@ const style = {
     fontWeight: "bold",
     color: "#000000",
     padding: "25px 1px",
-    borderBottom: "1px solid #d4d4d4"
+    borderBottom: "1px solid #d4d4d4",
+    marginTop: "105px"
 }
 
 const PageTitle = ({ title }) => (

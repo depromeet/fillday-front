@@ -54,7 +54,6 @@ class App extends React.Component<any, IAppState> {
     return (
       <div className="App">
         <Router>
-          <Setting />
           <Header login={this.state.login} />
           <Route exact={true} path="/" 
           render={() => (
@@ -75,6 +74,8 @@ class App extends React.Component<any, IAppState> {
             firebase={firebase}
             onLogin={this.onLogin} />
           )} />
+          <Route path="/fillday/setting"
+          component={Setting} />
         </Router>
         <Footer />
       </div>
