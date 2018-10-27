@@ -8,6 +8,7 @@ import ReportPage from './components/report';
 import {BrowserRouter as Router, Route, Redirect} from "react-router-dom";
 import LoginPage from './components/login';
 import firebase from './auth/firebase';
+import Setting from './components/setting/Setting';
 
 interface IAppState {
   login: boolean;
@@ -33,7 +34,7 @@ class App extends React.Component<any, IAppState> {
     })
   }
   public componentDidMount() {
-    firebase.auth().onAuthStateChanged((user) => {
+    firebase.auth().onAuthStateChanged((user: firebase.User) => {
       if (user) {
         // User is signed in.
         this.setState({
@@ -53,6 +54,7 @@ class App extends React.Component<any, IAppState> {
     return (
       <div className="App">
         <Router>
+          <Setting />
           <Header login={this.state.login} />
           <Route exact={true} path="/" 
           render={() => (
