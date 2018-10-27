@@ -1,5 +1,5 @@
 
-.select-container.active .record-option-list {
+.active .record-option-list {
     visibility: visible;
 }
 
@@ -34,12 +34,56 @@
     border: solid 1px #eaeaea;
     position: relative;
     box-sizing: border-box;
-    padding: 6px 28px;
-}
-.record-option-list .option {
-    padding: 6px 10px;
+    text-align: center;
+    padding-top: 8px;
 }
 
+.select-container .option {
+    padding: 6px 10px;
+    text-align: center;
+    position: relative;
+}
+.select-container:not(.mini) .record-costom-select:after {
+    content: '';
+    width: 11px;
+    height: 11px;
+    background: red;
+    position: absolute;
+    border-radius: 20px;
+    top: 12px;
+    left: 10px;
+}
+.select-container:not(.mini) .record-costom-select.color-0:after {
+    background: #d90b3e
+}
+.select-container:not(.mini) .record-costom-select.color-1:after {
+    background: #e6acb6
+}
+.select-container:not(.mini) .record-costom-select.color-2:after {
+    background: #f2dcda
+
+}
+
+.select-container:not(.mini) .option:after {
+    content: '';
+    width: 11px;
+    height: 11px;
+    background: red;
+    position: absolute;
+    border-radius: 20px;
+    top: 11px;
+    left: 13px;
+}
+.select-container:not(.mini) .option.color-0:after {
+    background: #d90b3e;
+} 
+.select-container:not(.mini) .option.color-1:after {
+    background: #e6acb6
+} 
+.select-container:not(.mini) .option.color-2:after {
+    background: #f2dcda
+
+} 
 .mini .record-costom-select {
     padding: 6px 10px;
 }

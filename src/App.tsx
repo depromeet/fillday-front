@@ -6,7 +6,7 @@ import RecordComponent from './components/record/RecordComponent';
 class App extends React.Component {
   public render() {
     return (
-      <RecordComponent/>
+      <RecordComponent selectedDate='2018-10-26'/>
     );
   }
 }

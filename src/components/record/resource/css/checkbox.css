@@ -18,6 +18,14 @@
 .checkbox input {
     display: none;
 }
+.checkbox input[type="checkbox"][readonly] {
+    pointer-events: none;
+  }
+
+.checkbox label[readonly] {
+pointer-events: none;
+}
+  
 [type=checkbox], [type=radio] {
     box-sizing: border-box;
     padding: 0;

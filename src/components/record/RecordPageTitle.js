@@ -1,13 +1,15 @@
 import * as React from 'react';
-import CalandarImg from "./resource/img/cal.png"
+import CalandarImg from "./resource/img/cal.png";
+import {TitleCal} from'./resource/img/title_cal.png';
 import PageTitle from '../setting/PageTitle';
 import { PageSubTitle } from './RecordStyle';
 import PageEditButton from './PageEditButton';
+import { SetDateFormatting } from './Util';
+import NaviButton from './NaviButton';
 
 class RecordPageTitle extends React.Component {
     render() {
-        const date = new Date();
-        const dateSting = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+        const { date, isToday, getRequest, isEditMode } = this.props;
         const style = {
             float: "right",
             backgroundImage: `url(${CalandarImg})`,
@@ -18,14 +20,40 @@ class RecordPageTitle extends React.Component {
             position: "relative",
             top: "58px"
         }
-
+        if (isToday && isEditMode) {
+            return (
+                <div>
+                    <PageTitle title="기록 작성" />
+                    <PageSubTitle>하루를 채워보세요</PageSubTitle>
+                    <PageSubTitle style={style}>
+                        <b>오늘 : </b>
+                        <span>{date}</span>
+                    </PageSubTitle>
+                </div>
+            );
+        }
+        const targetDate = new Date(date);
+        
+        targetDate.setDate(targetDate.getDate()-1)
+        const prevDate = SetDateFormatting(targetDate);
+        
+        targetDate.setDate(targetDate.getDate()+ 2)
+        const nextDate = SetDateFormatting(targetDate);
         return (
             <div>
-                <PageTitle title="기록 작성" />
-                <PageSubTitle>하루를 채워보세요</PageSubTitle>
-                <PageSubTitle style={style}>
-                    <b>오늘 : </b>
-                    <span>{dateSting}</span>
+                <PageSubTitle  color='#262626'>
+                    <NaviButton isLeft onClick={() => {
+                        console.log(prevDate)
+                        getRequest(prevDate);
+                    }}/>
+                    {prevDate}
+                </PageSubTitle>
+                <PageTitle title={date} imgUrl width/>
+                <PageSubTitle color='#262626'>
+                    {nextDate}
+                    <NaviButton onClick={() => {
+                        getRequest(nextDate);
+                    }}/>
                 </PageSubTitle>
             </div>
         );
