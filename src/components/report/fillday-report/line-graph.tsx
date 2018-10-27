@@ -23,22 +23,36 @@ interface IReportProps {
 }
 export default class LineGraph extends React.Component<IReportProps, any> {
   public render() {
-    const data = [
-      {name: '10.16', "집중도": 0, tester:2},
-      {name: '10.17', "집중도": 3, tester:1},
-      {name: '10.18', "집중도": 1, tester:0},
-      {name: '10.19', "집중도": 4, tester:4},
-      {name: '10.20', "집중도": 2, tester:5},
-      {name: '10.21', "집중도": 3, tester:1},
-      {name: '10.22', "집중도": 5, tester:3},
-    ];
-    data.map((val, idx, arr) => {
-      arr[idx]["집중도"] = Math.floor(Math.random() * 6);
-    });
+    const data: Array<{name: string, "집중도": number}> = [];
+    const weekStart = new Date(this.props.date);
+    weekStart.setDate(weekStart.getDate() - 6);
+    for(let i = 0 ;i < 7;i++) {
+      data.push({
+        name: `${weekStart.getMonth() + 1}.${weekStart.getDate()}`,
+        "집중도": (Math.floor(Math.random() * 6)),
+      })
+      weekStart.setDate(weekStart.getDate() + 1);
+    }
+    weekStart.setDate(weekStart.getDate() - 7);
     return (
       <div className="weekly-line-graph">
         <div className="report-subtitle">
-          주간 필-위크
+          주간 필위크
+          <div className="report-selected-date">
+            {weekStart.toLocaleDateString(undefined, {
+              day: 'numeric',
+              month: 'long',
+              weekday: 'long',
+              year: 'numeric',
+            })}
+            {"  ~  "}
+            {this.props.date.toLocaleDateString(undefined,{
+              day: 'numeric',
+              month: 'long',
+              weekday: 'long',
+              year: 'numeric',
+            })}
+          </div>
         </div>
         <div className="report-line-graph">
           <LineChart 

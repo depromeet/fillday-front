@@ -17,7 +17,7 @@ class GraphicMainTitle extends React.Component {
         <div
         className="report-detailed-title">
           {/* 기간 */}
-          2018.10.08 - 2018.10.15
+          기간 별 필 등급을 체크합니다.
         </div>
       </div>
     );
@@ -26,7 +26,7 @@ class GraphicMainTitle extends React.Component {
 
 interface IReportProps {
   date: Date;
-  onDateChange: (date:Date) => void;
+  onDateChange: (date:number) => void;
   reports: any;
 }
 

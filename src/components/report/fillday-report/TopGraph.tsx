@@ -10,7 +10,6 @@ interface IReportProps {
 }
 export default class TopGraph extends React.Component<IReportProps, any> {
   public render() {
-    console.log(this.props.date);
     return (
       <div className="report-box-shadow weekly-graph-report">
         <LineGraph 

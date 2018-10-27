@@ -33,7 +33,15 @@ export default class BarGraph extends React.Component<IBarProps, any> {
     return (
       <div className="report-box-shadow daily-dist">
         <div className="report-subtitle">
-          하루 필-데이
+          하루 필데이 
+          <div className="report-selected-date">
+            {this.props.date.toLocaleDateString(undefined,{
+              day: 'numeric',
+              month: 'long',
+              weekday: 'long',
+              year: 'numeric',
+            })}
+          </div>
         </div>
         <div className="daily-bar-graph">
             <BarChart 

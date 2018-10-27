@@ -10,7 +10,7 @@ function ListMainTitle(props?: any) {
         채워진 기록들
       </div>
       <div className="report-detailed-title">
-        지난 기록이 여기에 모여 있습니다.
+        지난 한 달의 기록이 여기에 모여 있습니다.
       </div>
     </div>
   );

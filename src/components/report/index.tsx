@@ -20,10 +20,12 @@ export default class ReportPage extends React.Component<IReportProps, IReportSta
       reports: undefined
     }
   }
-  public onDateChange(date: Date) {
+  public onDateChange(selected: number) {
+    const date = new Date(selected);
     if (this.state.date.getMonth() !== date.getMonth() &&
         this.state.date.getFullYear() !== date.getFullYear()) {
         // 한달 데이터 새로 가져오기
+        this.setState((prev) => ({reports: prev.reports?prev.reports+1:0}))
     }
     this.setState({date});
   }
