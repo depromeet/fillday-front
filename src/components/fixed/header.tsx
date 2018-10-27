@@ -31,10 +31,12 @@ export default class Header extends React.Component<IHeaderProps, any> {
                                     리포트 기록 보기
                                 </ReactTooltip>
                             </Link>
-                            <div className="header-alarm" 
-                            data-tip={true}
-                            data-for={"goto-write"}
-                            />
+                            <Link to={'/fillday/write'}>
+                                <div className="header-alarm" 
+                                data-tip={true}
+                                data-for={"goto-write"}
+                                />
+                            </Link>
                             <ReactTooltip
                             place="bottom"
                             border={true}
@@ -59,12 +61,14 @@ export default class Header extends React.Component<IHeaderProps, any> {
                             >
                                 필데이 설정하기
                             </ReactTooltip>
-                            <div className="header-write">
-                                <div className="header-write-img" />
-                                <div className="header-write-text">
-                                    글쓰기
+                            <Link to={'/fillday/write'}>
+                                <div className="header-write">
+                                    <div className="header-write-img" />
+                                    <div className="header-write-text">
+                                        글쓰기
+                                    </div>
                                 </div>
-                            </div>
+                            </Link>
                             </React.Fragment>
                         ): (
                             <Link to={'/fillday/login'}>

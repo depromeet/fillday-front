@@ -4,7 +4,6 @@ import SettingButton from './SettingButton';
 
 class SettingPrivacy extends React.Component {
     render() {
-        console.log(this.props);
         const { name, email, password } = this.props.privacy;
         return (
             <div className="setting-conponet">

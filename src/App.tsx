@@ -9,6 +9,7 @@ import {BrowserRouter as Router, Route, Redirect} from "react-router-dom";
 import LoginPage from './components/login';
 import firebase from './auth/firebase';
 import Setting from './components/setting/Setting';
+import RecordComponent from './components/record/RecordComponent';
 
 interface IAppState {
   login: boolean;
@@ -73,6 +74,10 @@ class App extends React.Component<any, IAppState> {
             login={this.state.login}
             firebase={firebase}
             onLogin={this.onLogin} />
+          )} />
+          <Route path="/fillday/write/:selectedDate"
+          render={() => (
+            <RecordComponent selectedDate='2018-10-27' />
           )} />
           <Route path="/fillday/setting"
           component={Setting} />

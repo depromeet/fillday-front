@@ -2,6 +2,7 @@ import * as React from 'react';
 import { COLOR } from '../../../utils/color';
 import TODO from '../imgs/todo.png';
 import * as ReactTooltip from 'react-tooltip';
+import { Link } from 'react-router-dom';
 
 function ListTitle() {
     return (
@@ -134,36 +135,39 @@ function HorizontalBar (props: IListDataProps) {
 
 
 function ListItem(props: IListDataProps) {
+    props.data.date.setDate(props.data.date.getDate() - 1);
     return (
-        <div className="report-box-shadow list-item-box">
-            <div 
-            style={{ width: "55px" }}
-            className="list-item-detail">
-                {/* 60px */}
-                {yymmdd(props.data.date)}
-            </div>
-            <div 
-            className="list-item-detail list-item-level">
-                {/* 점 - 8px, 간격 3px */}
-                <div className="list-item-dot"
-                style={{backgroundColor:"#d90b3e"}}/>
-                <div>
-                    Best
+        <Link to={`/fillday/${yymmdd(props.data.date)}`}>
+            <div className="report-box-shadow list-item-box">
+                <div 
+                style={{ width: "55px" }}
+                className="list-item-detail">
+                    {/* 60px */}
+                    {yymmdd(props.data.date)}
+                </div>
+                <div 
+                className="list-item-detail list-item-level">
+                    {/* 점 - 8px, 간격 3px */}
+                    <div className="list-item-dot"
+                    style={{backgroundColor:"#d90b3e"}}/>
+                    <div>
+                        Best
+                    </div>
+                </div>
+                <div 
+                title={props.data.subject}
+                className="list-item-detail list-item-subject">
+                    <div style={{overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap'}}>
+                        {props.data.subject}
+                    </div>
+                </div>
+                <HorizontalBar data={props.data}/>
+                <div 
+                className="list-item-detail list-item-done">
+                    <img src={TODO} style={{marginRight: "8px" }} /> {props.data.worksDone}
                 </div>
             </div>
-            <div 
-            title={props.data.subject}
-            className="list-item-detail list-item-subject">
-                <div style={{overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap'}}>
-                    {props.data.subject}
-                </div>
-            </div>
-            <HorizontalBar data={props.data}/>
-            <div 
-            className="list-item-detail list-item-done">
-                <img src={TODO} style={{marginRight: "8px" }} /> {props.data.worksDone}
-            </div>
-        </div>
+        </Link>
     )
 }
 export default class FilldayList extends React.Component {
