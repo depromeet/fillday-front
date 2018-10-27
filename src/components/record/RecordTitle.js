@@ -45,7 +45,7 @@ class RecordTitle extends React.Component {
         }
         const style= {
             title: {
-                padding: "5px 0",
+                padding: "8px 0",
                 width: "100%"  
             }
         }

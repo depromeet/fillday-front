@@ -48,8 +48,8 @@ class HourlyRecordTableRow extends React.Component {
                     <td>
                         {plan}
                     </td>
-                    <td>
-                        {score}
+                    <td className={`color-${score}`}>
+                        {score}        
                     </td>
                     <td>
                         {retrospect}

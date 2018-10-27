@@ -28,7 +28,6 @@ const Title = styled.div`
 `
 
 const PageTitle = ({ title, settingMode, imgUrl, width }) => {
-    console.log(imgUrl)
     return <Title settingMode={settingMode} imgUrl={imgUrl} width={width}>{title}</Title>
 }
 
