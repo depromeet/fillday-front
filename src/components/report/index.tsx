@@ -10,6 +10,7 @@ interface IReportStatus {
 }
 interface IReportProps{
   login: boolean;
+  user: firebase.User | undefined;
 }
 export default class ReportPage extends React.Component<IReportProps, IReportStatus> {
   constructor(props:IReportProps) {

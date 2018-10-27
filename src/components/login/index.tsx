@@ -1,11 +1,12 @@
 import * as React from 'react'; 
 import "./login.css";
-import firebase from '../../auth/firebase';
+import * as firebase from 'firebase';
 import { Redirect } from 'react-router';
 
 interface ILoginProps {
     login: boolean;
     onLogin: () => void;
+    firebase: typeof firebase;
 }
 
 interface ILoginPageState {
@@ -34,14 +35,34 @@ export default class LoginPage extends React.Component<ILoginProps, ILoginPageSt
         });
     }
     public firebaseLogin() {
-        firebase.auth().createUserWithEmailAndPassword(
+        // 계정 생성 시도
+        this.props.firebase.auth().createUserWithEmailAndPassword(
             this.state.email, this.state.password
-        ).then(() => {
+        ).then((user) => {
             this.props.onLogin();
-        })
-        .catch((error) => {
+            // api 서버에 등록
+            const options = {
+                method: "POST",
+                headers: {
+                    "Content-Type":"application/json",
+                },
+                body: JSON.stringify({
+                    "name": this.state.email.split('@')[0],
+                    "email": this.state.email,
+                    "accessToken": `atk-${this.state.email}`,
+                    "provider": "NAVER"
+                })
+            };
+
+            fetch("http://fillday.manjong.org/v1/accounts", options) .then((response) => {
+                alert(response.json());
+            }).catch((ferr) => {
+                alert(ferr);
+            });
+        }).catch((error) => {
+            // 이미 존재하는 계정일 경우 로그인 시도
             if (error.code === "auth/email-already-in-use") {
-                firebase.auth().signInWithEmailAndPassword(
+                this.props.firebase.auth().signInWithEmailAndPassword(
                     this.state.email, this.state.password
                 ).then(() => {
                     this.props.onLogin();

@@ -64,6 +64,7 @@ function MainIntro() {
 }
 interface IMainBodyProps {
     login: boolean;
+    user: firebase.User | undefined;
 }
 export default class MainBody extends React.Component<IMainBodyProps, any> {
     public render() {

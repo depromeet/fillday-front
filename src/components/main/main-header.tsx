@@ -7,6 +7,7 @@ interface IMainHeaderState {
 }
 interface IMainHeaderProps {
     login: boolean;
+    user: firebase.User | undefined;
 }
 class MainHeader extends React.Component<IMainHeaderProps, IMainHeaderState> {
     constructor(props: any) {
@@ -51,7 +52,8 @@ class MainHeader extends React.Component<IMainHeaderProps, IMainHeaderState> {
                     <div className="main-header-greeting">
                         {
                             this.props.login? 
-                            "안녕하세요, 기환님.": 
+                            `안녕하세요, ${this.props.user && this.props.user.email? this.props.user.email.split("@")[0]:
+                            "임시사용자"}님.`: 
                             "열정이 채워져가는 공간,"
                         }
                     </div>
