@@ -8,6 +8,9 @@
     margin-right: auto;
     margin-top: 105px;
 }
+.graphic-main-title {
+    margin-bottom: 60px;
+}
 .report-title {
     display: inline-block;
     height: 35px;
@@ -58,8 +61,6 @@
     flex-direction: row;
     width: 1200px;
     height: 320px;
-    margin-top: 60px;
-    margin-bottom: 40px;
     padding-top: 40px;
     padding-bottom: 40px;
     box-sizing: border-box;
@@ -135,6 +136,7 @@
 
 .subgraph-report {
     display: flex;
+    margin-bottom: 40px;
     flex-direction: row;
 }
 .daily-dist {

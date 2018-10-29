@@ -35,13 +35,13 @@ export default class GraphicPane extends React.Component<IReportProps, any> {
     return (
         <div className="graphic-report">
           <GraphicMainTitle />
-          <TopGraph
-          date={this.props.date} 
-          reports={this.props.reports} />
           <BottomGraph 
           date={this.props.date}
           reports={this.props.reports}
           onDateChange={this.props.onDateChange}/>
+          <TopGraph
+          date={this.props.date} 
+          reports={this.props.reports} />
         </div>
     );
   }
