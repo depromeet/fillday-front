@@ -6,6 +6,7 @@ import { PageSubTitle } from './RecordStyle';
 import PageEditButton from './PageEditButton';
 import { SetDateFormatting } from './Util';
 import NaviButton from './NaviButton';
+import {Link} from 'react-router-dom';
 
 class RecordPageTitle extends React.Component {
     render() {

@@ -137,7 +137,7 @@ function HorizontalBar (props: IListDataProps) {
 function ListItem(props: IListDataProps) {
     props.data.date.setDate(props.data.date.getDate() - 1);
     return (
-        <Link to={`/fillday/${yymmdd(props.data.date)}`}>
+        <Link to={`/fillday/write/${yymmdd(props.data.date)}`}>
             <div className="report-box-shadow list-item-box">
                 <div 
                 style={{ width: "55px" }}

@@ -76,9 +76,8 @@ class App extends React.Component<any, IAppState> {
             onLogin={this.onLogin} />
           )} />
           <Route path="/fillday/write/:selectedDate"
-          render={() => (
-            <RecordComponent selectedDate='2018-10-27' />
-          )} />
+          component={RecordComponent} />
+
           <Route path="/fillday/setting"
           component={Setting} />
         </Router>

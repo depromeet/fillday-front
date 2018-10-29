@@ -8,12 +8,12 @@ import HourlyRecord from './HourlyRecord';
 import Todo from './Todo';
 import { POINT_CONVERSION_COMPRESSED } from 'constants';
 import { SetDateFormatting } from './Util';
+import { Redirect } from 'react-router';
 
 
 const RecordComponentStyle = styled.div`
     width: 1200px;
     margin: 0 auto;
-    margin-top: 105px;
 `
 const FlexComponent = styled.div`
     display: flex;
@@ -21,7 +21,6 @@ const FlexComponent = styled.div`
     padding-bottom: 101px;
 `
 export default class RecordComponent extends React.Component {
-    isEditMode= false
     defaultProps = {
         title: '',
         todoList: [{
@@ -58,8 +57,18 @@ export default class RecordComponent extends React.Component {
     componentDidMount = () => {
         const userID = 'userId';
         // this.getRequest();
-        const {selectedDate} = this.props;
+        let selectedDate = null;
+        console.log(this.props);
+        if (this.props.match && this.props.match.params) {
+            selectedDate = this.props.match.params.selectedDate;
+        }
+        if (!selectedDate) {
+            selectedDate = SetDateFormatting(new Date());
+        }
         const localData =JSON.parse(localStorage.getItem(selectedDate)); 
+        if (selectedDate === SetDateFormatting(new Date())){
+            // 
+        }
         if(localData) {
             this.setState({
                 title : localData.title,
@@ -235,6 +244,8 @@ export default class RecordComponent extends React.Component {
         today = today? today : SetDateFormatting(new Date());
         const isToday = this.isToday(new Date(today));
         // const isToday = false;
+        console.log(this.state);
+        console.log(this.props);
     
         return (
             <RecordComponentStyle onChange={this.addSaveBtn}>

@@ -32,6 +32,8 @@ ${props => !props.isLeft && `
     left: 12px;
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
+    text-decoration: none;
+    color: #000000;
     ${props => props.isLeft && `
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);

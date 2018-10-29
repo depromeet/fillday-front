@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Input } from './RecordStyle';
 import TitleIcon from './resource/img/cal.png';
 import PageEditButton from './PageEditButton';
+import { Redirect } from 'react-router';
 
 const RecordTitleComponet = styled.div`
     display: flex;
@@ -10,7 +11,7 @@ const RecordTitleComponet = styled.div`
     margin-top: 59px;
     box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.06);
     background-image: url(${TitleIcon});
-    background-repeat: no-repeat
+    background-repeat: no-repeat;
     background-position: 33px 42px;
     background-color: #ffffff;
     padding: 32px 20px 32px 56px;
